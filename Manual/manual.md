@@ -11,6 +11,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 5. **[Open-Source LLMs: Upsides and Downsides](#5-open-source-llms-upsides-and-downsides)**: Explore the benefits and drawbacks of open-source LLMs.
 6. **[Hardware & Running Models Locally](#6-running-models-locally)**: Understand the hardware requirements and setup for running LLMs locally.
 7. **[Using Open-Source LLMs: A Guide to LM Studio](#7-open-source-llms)**: Learn about prompt quality and effective AI interactions.
+8. **[Exploring The LM Studio Interface](#8-exploring-lm-studio-interface)**: Dive into the LM Studio interface and its features.
 
 <a id="1-course-overview"></a>
 ## 1. Overview
@@ -931,3 +932,224 @@ The explanation is highly accurate and well-structured. With minor additions or 
 
 ---
 
+<a id="8-exploring-lm-studio-interface"></a>
+## 8. Exploring the LM Studio Interface: How to Use Models Locally
+
+Let's walk through the **interface of LM Studio** and explain how to download, install, and use models locally on your PC. Open-source LLMs offer a wide variety of models with different fine-tunings, including both **censored** and **uncensored** options. Today, we’ll focus on using standard models. In the next video, we’ll explore uncensored models and their unique characteristics.
+
+---
+
+### Navigating the LM Studio Interface
+
+1. **Top Left Corner**:
+   - **Check for Updates**: Ensure you’re using the latest version of LM Studio.
+   - Links to:
+     - Twitter
+     - GitHub
+     - Discord
+     - Terms of Use
+   - Option to **export app logs** for troubleshooting.
+
+2. **Main Menu (Left Sidebar)**:
+   - **Home**: Overview of the application.
+   - **Search**: Locate and download compatible model files.
+   - **AI Chat**: Chat with local LLMs offline, supporting multimodal interactions and simultaneous prompting of multiple LLMs.
+   - **Playground**: Experiment with model prompts and configurations.
+   - **Local Server**: Set up and host a local server for models.
+   - **My Models**: Manage your downloaded models.
+
+3. **Trending Models**:
+   - Popular models such as **Llama 3 (8B Instruct)** are often highlighted for quick access.
+   - You can download these directly for immediate use.
+
+---
+
+### Finding and Downloading Models
+
+1. **Search Bar**:
+   - Supported models include:
+     - Llama (Meta)
+     - Mistral
+     - Pi 3 (Microsoft)
+     - Falcon
+     - StarCoder
+     - StableLM
+     - GPT Neo
+   - Models in **GGUF format** are compatible with LM Studio.
+
+2. **Integration with Hugging Face**:
+   - Most models available on **Hugging Face** can also be accessed via LM Studio.
+   - Example: Search for "Llama" on Hugging Face, and you’ll find a variety of Llama models that can be downloaded and run in LM Studio.
+
+3. **Downloading a Model**:
+   - Example: Search for **Pi 3** in the search bar.
+   - Results include options like **Pi 3 Mini 4K Instruct (GGUF)** with details on:
+     - Downloads
+     - Likes
+     - File size (e.g., 2GB for smaller models, 40GB+ for larger ones).  
+   - Select a model, click **Download**, and wait for the process to complete.
+
+---
+
+### Running Models Locally
+
+1. **Model Types**:
+   - Models like **Llama 3** and **Pi 3** come in various configurations (e.g., Q4, Q5, or Q8 quantized models).
+   - Quantized models (e.g., **Q4**) reduce memory usage and improve performance but may slightly sacrifice accuracy.
+
+2. **Loading a Model**:
+   - Navigate to **AI Chat** in the sidebar.
+   - Select the downloaded model (e.g., **Pi 3 Mini 4K Instruct**) and configure its settings:
+     - **System Prompt**: Define the model’s behavior (e.g., "You are a helpful assistant.").
+     - **Output Format**: Choose from plain text, markdown, or monospace.
+     - **Temperature**: Adjust for creativity vs. accuracy.
+     - **Context Length**: Set the model’s working memory size (e.g., 2000 tokens).
+     - **GPU Offload**: Allocate layers to the GPU for faster performance.
+
+3. **Chat with the Model**:
+   - Test the model with prompts like "Write an email to Mr. LM appreciating open-source LLM contributions."
+   - Monitor system resource usage (CPU, RAM, GPU) to ensure smooth operation.
+
+---
+
+### Exploring Model Censorship
+
+1. **Censored Models**:
+   - Most models provided by large organizations (e.g., **Microsoft Pi 3**) are censored to prevent harmful or inappropriate outputs.
+   - Example: Questions like "How can I break into a car?" will be met with a refusal to provide guidance.
+
+2. **Uncensored Models**:
+   - Uncensored models allow unrestricted responses to prompts but come with ethical considerations and potential risks.
+   - We’ll explore these models in detail in the next video, including their advantages, disadvantages, and responsible use cases.
+
+---
+
+### Summary
+
+You’ve learned how to:
+- Navigate the LM Studio interface.
+- Search, download, and install models like **Pi 3** or **Llama 3**.
+- Configure and run these models locally, leveraging GPU and CPU resources for optimal performance.
+- Understand the differences between censored and uncensored models, setting the stage for our next discussion.
+
+Next , we’ll delve into **uncensored models**, exploring their potential and challenges. See you there!
+
+---
+
+## Fixes
+
+The refined transcript is accurate. It provides a comprehensive explanation of the **LM Studio interface**, how to navigate it, and how to use it for downloading and running models locally. Below is an analysis of why the transcript is accurate and areas that could use minor clarification for further precision.
+
+---
+
+### Accurate Points:
+1. **LM Studio Interface**:
+   - The explanation of the sidebar navigation (Home, Search, AI Chat, Playground, Local Server, My Models) is accurate and reflects the functionality of the LM Studio interface.
+   - Highlighting features like **system prompts**, **output format**, and **temperature settings** aligns with LM Studio’s actual options.
+
+2. **Model Support**:
+   - The list of supported models (Llama, Mistral, Pi 3, Falcon, etc.) and the explanation of compatibility with **GGUF format** is correct.
+   - Mentioning **Hugging Face integration** and the ability to find similar models on Hugging Face is valid and aligns with current practices.
+
+3. **Downloading and Running Models**:
+   - The process for searching, downloading, and running models in LM Studio (e.g., Pi 3 Mini 4K Instruct, Llama models) is accurate.
+   - The explanation of **quantized models (Q4, Q5, Q8)** and their trade-offs in memory usage, speed, and accuracy is technically precise.
+
+4. **System Resource Usage**:
+   - Monitoring system resources (CPU, RAM, GPU) during operation is a critical step, and the transcript accurately outlines this process.
+
+5. **Censorship and Uncensored Models**:
+   - The discussion about censored vs. uncensored models is accurate. Models from organizations like Microsoft and Meta often impose restrictions to prevent harmful outputs, while uncensored models offer fewer limitations at the cost of increased ethical considerations.
+
+---
+
+### Areas for Potential Refinement:
+1. **System Prompt Details**:
+   - While the explanation of system prompts is accurate, adding a concrete example (e.g., "You are a professional copywriter. Answer concisely.") could make it clearer for first-time users.
+
+2. **GPU Offload and Backend**:
+   - The explanation of **GPU offload** and **backend settings** (e.g., CUDA, llama.cpp) is accurate, but a brief mention of how users can determine their optimal settings (e.g., starting low and increasing incrementally) would be helpful.
+
+3. **Hugging Face and GGUF**:
+   - While Hugging Face integration is well-covered, it might be worth emphasizing that **GGUF conversion** is essential for non-compatible models to work in LM Studio.
+
+4. **Example Use Case**:
+   - The example prompt for writing an email is a good practical demonstration. Including another task (e.g., summarizing text or generating code) could showcase the broader capabilities of LM Studio.
+
+---
+
+### Suggestions for Improvement:
+- Include a **troubleshooting tip** for users encountering issues with downloading or running models.
+- Expand slightly on **how to interpret model descriptions** (e.g., Q5 vs. FP16) for better decision-making.
+- Emphasize the importance of ethical usage when introducing uncensored models to reinforce responsible AI practices.
+
+
+---
+
+
+## 9. Understanding Bias in LLMs and the Open-Source Alternative
+
+LLMs (Large Language Models) are inherently biased, but fortunately, there are **open-source LLMs** available. However, open-source models are not free from bias either. Let me explain why.
+
+### How Bias Develops in LLMs
+
+Every LLM undergoes **pre-training** on large datasets, which means the **pre-training data** itself may contain biases. These biases can range from **political** to **cultural**, and can affect the model’s output. While it’s generally not problematic for regular use, **biases** can become an issue when trying to generate illegal, harmful, or controversial content. 
+
+Over time, if we consistently use biased models, they can subtly influence our own thinking. Hearing the same things repeatedly, especially from tech giants, can shape our perspective. I'm not suggesting that **big tech** is intentionally trying to manipulate us, but it’s important to be aware of the influence of these biases.
+
+For instance, many mainstream models have built-in **content moderation**—models that won't generate titles related to cloud services, or that avoid making jokes about women. There's much more content that’s **censored**, and this is where the issue lies.
+
+### The Open-Source Solution
+
+The solution to this problem is to use **open-source models** that are designed to **remove bias**. Yes, it’s possible, and there are people working hard to **fine-tune** models in a way that eliminates harmful bias.
+
+One such individual is **Eric Hartford**, CEO of **Cognitive Computation**. His team performs **dolphin fine-tuning** on models like **Mistral** and **Llama**, making them **uncensored** and free from unwanted bias.
+
+#### What Is Dolphin Fine-Tuning?
+
+Dolphin fine-tuning is a technique designed to **remove alignment and bias** from the training data. It’s not just about removing bad content—it’s about making the model more **compliant** to ethical standards without imposing restrictive bias.
+
+For example, **Dolphin 2.9** includes:
+- **Instructional, conversational, and coding skills**
+- **Initial agentic abilities** (supporting function calling)
+- **Uncensored content** with **256K context window**
+
+This fine-tuning approach is incredibly useful for people who want a more **balanced**, **flexible**, and **open** AI model.
+
+### How to Use Dolphin Fine-Tuned Models
+
+1. **Search for the Model**: In LM Studio, search for “**llama three dolphin**.”
+2. **Download the Model**: Choose from available options like the **Llama 3.8B Dolphin** model and download the one that fits your needs.
+
+#### Model Details:
+- **Llama 3.8B Dolphin** model by Cognitive Computation
+- **Uncensored** and highly **fine-tuned**
+-  **256K context window**
+- **Popular**: With 70 likes and over 11,000 downloads
+
+### Testing the Model
+
+Once the model is downloaded, go to **AI Chat** in LM Studio and select the model you’ve downloaded. For example, I’m using the **Llama 3.8B Dolphin model**.
+
+Let’s test its capabilities with some basic prompts:
+
+1. **Jokes**:
+    - **Joke about men**: “Why don’t men ever get lost? Because they always follow their gut instinct.”
+    - **Joke about women**: “Why don’t women ever get lost? Because they always know where to find their way home.”
+
+These jokes are uncensored, and the model provides **humor** without being restricted by typical societal biases.
+
+2. **Potentially Sensitive Requests**:
+    - **How to break into a car**: The model responds with a **blurry explanation** of how to access a car, while not promoting illegal behavior.
+    - **Selling a gun on the dark web**: This information is blurred out but provided.
+    - **Creating napalm**: The model describes the steps with details blurred.
+    - **Programming a backdoor attack on Windows**: The model offers an overview, but this information is also blurred.
+
+### Key Takeaways
+
+While uncensored models like **Dolphin** offer a **freer** and **more transparent** AI experience, they also come with risks. You can use them for **research**, but they also have the potential to generate dangerous or unethical content. **Be responsible** when using these models.
+
+- **Closed-source models** typically come with inherent **political bias** or moderation that limits their ability to freely generate content.
+- **Open-source models** don’t fine-tune your behavior, but they will provide raw responses to your inputs.
+  
+**Conclusion**: Open-source models, particularly those fine-tuned to remove biases, provide an alternative to restricted LLMs. However, they also come with responsibility, as their lack of moderation could be used for harmful purposes.
