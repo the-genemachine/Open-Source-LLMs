@@ -2,7 +2,8 @@
 
 Welcome to this comprehensive course on open-source LLMs. This manual outlines every essential topic you need to master—from installation to AI agent creation—ensuring you have a clear path to becoming proficient in open-source LLMs. Below is an overview of what you'll be learning.
 
-## Table of Contents:
+<a id="0-table-of-contents"></a>
+## Table of Contents 
 
 1. **[Course Overview](#1-course-overview)**: Understand the structure and goals of this course.
 2. **[Understanding LLMs: A Simplified Breakdown](#2-understanding-llms)**: Learn the basics of Large Language Models.
@@ -12,6 +13,9 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 6. **[Hardware & Running Models Locally](#6-running-models-locally)**: Understand the hardware requirements and setup for running LLMs locally.
 7. **[Using Open-Source LLMs: A Guide to LM Studio](#7-open-source-llms)**: Learn about prompt quality and effective AI interactions.
 8. **[Exploring The LM Studio Interface](#8-exploring-lm-studio-interface)**: Dive into the LM Studio interface and its features.
+9. **[Understanding Bias in LLMs and the Open-Source Alternative](#9-understanding-bias-in-llms)**: Explore bias in LLMs and how open-source models mitigate it.
+10. **[Exploring LLM Rankings and Tools](#10-exploring-llm-rankings-and-tools)**: Discover tools for comparing and evaluating LLMs.
+11. **[Closed Source LLms: Downsides](#11-closed-source-llms)**: Understand the inner workings of closed-source LLMs.
 
 <a id="1-course-overview"></a>
 ## 1. Overview
@@ -155,7 +159,7 @@ The explanation is largely accurate, but there are areas that could use some ref
 - Provide examples of open-source tools (e.g., `transformers` library) to make the explanation more tangible.
 - Add details about how tokenization impacts performance and accuracy.
 
-
+##### [Table of Contents](#0-table-of-contents)
 ---
 
 <a id="2-understanding-llms"></a>
@@ -202,6 +206,9 @@ LLMs work based on the **Transformer Architecture**, which uses **neural network
 ### Conclusion
 
 To summarize, an LLM is composed of two main files: the **parameter file** (containing all the learned knowledge) and the **run file** (executing the model). The training process involves **pre-training** on large datasets, followed by **fine-tuning** with human-labeled data, and ending with **reinforcement learning** to refine the model’s responses.
+
+##### [Table of Contents](#0-table-of-contents)
+---
 
 <a id="3-exploring-and-comparing-llms"></a>
 ## 3. Exploring and Comparing LLMs
@@ -325,6 +332,7 @@ The explanation is mostly accurate but can benefit from additional clarification
 ### Final Evaluation:
 - The explanation is largely accurate and provides a good overview of LLM discovery tools and ranking systems. However, adding specific, verifiable details about the tools and metrics would improve precision and reliability.
 
+##### [Table of Contents](#0-table-of-contents)
 ---
 
 <a id="4-downsides-of-closed-source-llms"></a>
@@ -468,6 +476,7 @@ Closed-source LLMs are powerful tools, but they come with notable limitations. *
 ### Final Evaluation:
 The explanation is accurate overall but could be refined to include more nuanced details, especially around data usage policies, the reasons for alignment, and the variability of latency and security concerns. With these additions, it would become a highly precise and balanced summary.
 
+##### [Table of Contents](#0-table-of-contents)
 ---
 
 < a id="5-open-source-llms-upsides-and-downsides"></a>
@@ -612,7 +621,7 @@ Next, we’ll explore specific open-source LLMs, their applications, and how to 
 ### Final Evaluation:
 The explanation is accurate and provides a balanced view of open-source LLMs. With minor adjustments to address nuances in performance, bias, and hardware requirements, the script would be precise and highly informative. Let me know if you'd like me to refine these areas further!
 
-
+##### [Table of Contents](#0-table-of-contents)
 ---
 
 <a id="6-running-models-locally"></a>
@@ -775,6 +784,7 @@ The explanation is accurate and provides a solid overview of hardware requiremen
 ### Final Evaluation:
 The explanation is accurate and covers the key concepts well. With minor refinements to emphasize trade-offs, platform-specific details, and practical GPU accessibility, the script would provide a comprehensive and precise guide.
 
+##### [Table of Contents](#0-table-of-contents)
 ---
 
 <a id="7-open-source-llms"></a>
@@ -930,6 +940,7 @@ The refined explanation is accurate and provides a clear, detailed overview of u
 ### Final Evaluation:
 The explanation is highly accurate and well-structured. With minor additions or clarifications around GPU requirements, quantization, and alternative platform capabilities, it would become a comprehensive and precise guide.
 
+##### [Table of Contents](#0-table-of-contents)
 ---
 
 <a id="8-exploring-lm-studio-interface"></a>
@@ -1083,10 +1094,10 @@ The refined transcript is accurate. It provides a comprehensive explanation of t
 - Expand slightly on **how to interpret model descriptions** (e.g., Q5 vs. FP16) for better decision-making.
 - Emphasize the importance of ethical usage when introducing uncensored models to reinforce responsible AI practices.
 
-
+##### [Table of Contents](#0-table-of-contents)
 ---
 
-
+<a id="9-understanding-bias-in-llms"></a>
 ## 9. Understanding Bias in LLMs and the Open-Source Alternative
 
 LLMs (Large Language Models) are inherently biased, but fortunately, there are **open-source LLMs** available. However, open-source models are not free from bias either. Let me explain why.
@@ -1153,3 +1164,339 @@ While uncensored models like **Dolphin** offer a **freer** and **more transparen
 - **Open-source models** don’t fine-tune your behavior, but they will provide raw responses to your inputs.
   
 **Conclusion**: Open-source models, particularly those fine-tuned to remove biases, provide an alternative to restricted LLMs. However, they also come with responsibility, as their lack of moderation could be used for harmful purposes.
+
+---
+
+### Potential Additions:
+
+#### 1. **Legal and Ethical Considerations**:
+   - Add a note emphasizing the **legal risks** of using uncensored models for potentially harmful purposes.
+   - Highlight the **ethical responsibility** of the user when working with powerful AI tools.
+   - Example: "Always ensure your use of uncensored models complies with local laws and ethical guidelines. Misuse can have severe consequences."
+
+#### 2. **Real-World Applications of Uncensored Models**:
+   - Provide examples of **productive use cases** for uncensored models to showcase their benefits, such as:
+     - Academic research
+     - Creative writing without filters
+     - Open-ended brainstorming
+     - Advanced coding support
+
+#### 3. **Comparison Table**:
+   - Include a **comparison table** summarizing the differences between **censored** and **uncensored** models. This would provide a quick reference for users.
+
+| Feature              | Censored Models            | Uncensored Models          |
+|----------------------|----------------------------|----------------------------|
+| **Bias**             | Politically/ethically aligned | Minimal to no alignment   |
+| **Content Moderation** | Strict                     | None                       |
+| **Use Cases**        | Limited to ethical outputs | Open-ended                 |
+| **Privacy**          | Data may leave the system  | Local-only                 |
+| **Transparency**     | No access to training data or weights | Full access to code and data |
+| **Control**          | Limited to predefined behavior | Fully customizable        |
+| **Dependency**       | Requires internet/cloud    | Can run offline            |
+
+
+#### 4. **Practical Limitations of Uncensored Models**:
+   - Discuss the **limitations** of using uncensored models:
+     - Reduced safety in content generation.
+     - Potential for lower accuracy in specific domains if bias removal affects training.
+   - Reinforce the need for **user oversight** to verify outputs.
+
+#### 5. **Technical Considerations**:
+   - Expand on the **technical setup**:
+     - GPU/CPU requirements for running uncensored models.
+     - Quantization to fit larger models on smaller hardware.
+   - Provide guidance on selecting **token limits** and optimizing **model settings**.
+
+#### 6. **Reinforcement of Open-Source Benefits**:
+   - Highlight additional benefits of open-source models, such as:
+     - **Transparency**: Ability to inspect and modify the model’s code and training data.
+     - **Community Contributions**: Ongoing improvements by the community.
+
+#### 7. **Future Outlook**:
+   - Include a forward-looking statement:
+     - How open-source models might evolve.
+     - Potential regulations for uncensored models.
+     - The role of developers in ensuring ethical AI usage.
+
+#### 8. **FAQs or Troubleshooting Section**:
+   - Common questions or concerns, such as:
+     - What to do if a model fails to load?
+     - How to interpret model output errors?
+     - Ensuring privacy when using uncensored models.
+
+---
+
+### Conclusion
+
+Integrating these elements would make the transcript more robust and actionable for users, offering them both the **context** and **practical guidance** needed to make informed decisions.
+
+##### [Table of Contents](#0-table-of-contents)
+---
+
+<a id="10-exploring-llm-rankings-and-tools"></a>
+## 10. Exploring LLM Rankings and Tools to Find the Best Models
+
+Next are tools that help will you identify the **best LLMs (Large Language Models)** for your needs. While there are thousands of LLMs available, you don’t need to know every single one. Instead, you will be guided to platforms where you can explore both **closed-source** and **open-source** models and see how they compare.
+
+---
+
+### Finding the Best LLMs
+
+#### 1. **LLM Chatbot Arena Leaderboard**
+- This leaderboard ranks **closed-source** and **open-source** LLMs side-by-side.
+- **Over 1 million humans** have contributed rankings by testing these models in real-time.
+- Example of current top-ranked models:
+  1. **GPT-4 Omni** (Closed-source, OpenAI)
+  2. **Claude 3.5 Summit** (Closed-source, Anthropic)
+  3. **Gemini** models (Closed-source, Google)
+
+#### 2. **Open LLM Leaderboard**
+- Exclusively features **open-source models**.
+- Includes detailed testing and benchmarks.
+- Example of top-ranked open-source models:
+  1. **Koala 2** (First place)
+  2. **Llama 3** (Meta)
+  3. **Mistral 8x22B**
+
+---
+
+### Open-Source Models: Improving Over Time
+
+While closed-source models like GPT-4, Claude, and Gemini dominate the top spots, **open-source LLMs** are rapidly improving. Models such as **Llama 3**, **Mistral**, and **Nemo Tron** (NVIDIA) are closing the gap. Open-source models often:
+- Provide **data privacy** by running locally.
+- Offer **customization** for specific use cases.
+
+---
+
+### How to Use the Leaderboards
+
+1. **Explore Categories**:
+   - Both leaderboards allow you to filter models by category, such as **coding** or **creative writing**.
+   - Example: In the **coding** category:
+     - **Claude 3.5 Summit** ranks higher than GPT-4 Omni for coding tasks.
+     - Open-source options like **DeepSea Coder v2** are also excellent choices.
+
+2. **Test Models**:
+   - Use the **direct chat** feature to try out models instantly.
+   - Compare two models side-by-side in the **Arena Mode**.
+     - Example: Test **Gemini 2 (27B)** vs. **Koala 1.5 (32B)** with a prompt like “Generate Python code for a Snake game.”
+
+---
+
+### Predictions for Future Model Trends
+
+- **Meta (Llama)**:
+  - With significant funding, Meta’s Llama models will likely continue dominating the **open-source space**.
+- **Microsoft (Pi-3 Models)**:
+  - Microsoft's models will improve due to strong financial backing and infrastructure.
+- **Cohere**:
+  - Cohere models are highly capitalized and show consistent growth.
+
+---
+
+### Language-Specific Performance
+
+- If you need models tailored for specific languages:
+  - **German**: Llama models are particularly strong, even if they don’t rank in the top 10.
+  - Use filters to identify models suited to your preferred language.
+
+---
+
+### Example Workflow: Testing Models
+
+1. **Select Models**:
+   - Example: Test **Gemini 2 (27B)** vs. **Koala 1.5 (32B)**.
+2. **Provide a Prompt**:
+   - Example: “Write a Python script for a Snake game.”
+3. **Compare Outputs**:
+   - Evaluate factors like:
+     - Response quality
+     - Speed
+     - Creativity
+   - Example Outcome: Gemini 2 may generate better structure, but Koala 1.5 could provide more detailed code.
+
+---
+
+### Key Takeaways
+
+- **LLM Chatbot Arena**:
+  - Find rankings for **closed-source** and **open-source** models.
+  - See how over 1 million testers have rated various models.
+- **Open LLM Leaderboard**:
+  - Discover benchmarks for exclusively **open-source models**.
+  - Stay updated with regular improvements and new releases.
+- **Custom Testing**:
+  - Use direct chat or arena features to test models in real time and find the best fit for your needs.
+
+With these tools, you’ll always find the best and newest model for your specific use case. See you in the next video, where we’ll dive deeper into how to **fine-tune open-source models** for even better results!
+
+---
+
+### Additional Information
+
+#### 1. **Context Windows and Token Limits**
+- When choosing models, consider their **context window size**:
+  - Larger context windows (e.g., 256K tokens) allow for better handling of long documents or conversations.
+  - Example: **Llama 3 Dolphin** supports up to 256K tokens, making it ideal for extensive queries.
+
+#### 2. **Fine-Tuning Options**
+- Open-source models offer **fine-tuning capabilities**, enabling customization for specific tasks:
+  - Example: Fine-tune **Llama 3** for customer support chatbots or technical documentation generation.
+- **Hugging Face** provides tools and datasets to streamline the fine-tuning process.
+
+#### 3. **Inference Speed**
+- Speed can vary significantly based on your hardware and the model size:
+  - Smaller models (e.g., 7B parameters) are faster but less capable.
+  - Larger models (e.g., 70B parameters) offer higher accuracy but may require GPU offloading or quantization for optimal performance.
+
+#### 4. **Ethical and Legal Considerations**
+- Be mindful of the **ethical implications** when using open-source models, especially uncensored ones:
+  - Avoid generating harmful, illegal, or unethical content.
+  - Respect intellectual property and privacy laws when using outputs for commercial purposes.
+
+#### 5. **Exploring Emerging Models**
+- Keep an eye on **new releases**:
+  - Models like **DeepSea Coder v2** specialize in coding tasks.
+  - New frameworks may introduce innovations like **function calling** or **agentic behaviors**.
+
+#### 6. **Collaboration Features**
+- Some platforms support **collaborative testing**:
+  - Share prompts and results with others to explore model performance in real-world scenarios.
+  - Example: Use **Arena Mode** to engage in shared evaluations with colleagues.
+
+#### 7. **Model Licensing**
+- Always verify the licensing terms of open-source models:
+  - Some models may restrict commercial use without prior permission.
+  - Check for licenses like **Apache 2.0** or **Creative Commons** to understand usage rights.
+
+#### 8. **GPU and Quantization Recommendations**
+- To run larger models effectively:
+  - Use **NVIDIA GPUs** with CUDA support.
+  - Consider **quantized models** (Q4, Q5, Q8) to reduce VRAM requirements without significant accuracy loss.
+
+#### 9. **Cross-Platform Compatibility**
+- Ensure the model or platform supports your operating system:
+  - Most open-source tools are compatible with **Linux**, **Windows**, and **MacOS**.
+  - Some tools, like **LM Studio**, optimize performance for **M1/M2 Mac chips**.
+
+##### [Table of Contents](#0-table-of-contents)
+---
+
+<a id="11-closed-source-llms"></a>
+## 11. Closed-Source LLMs: An Overview of Downsides
+
+Closed-source LLMs, such as ChatGPT, Gemini, and Claude, are widely recognized for their high rankings on performance leaderboards. However, despite their strengths, they come with notable disadvantages. This document outlines the key issues associated with closed-source LLMs and provides examples to highlight their limitations.
+
+---
+
+## Key Downsides of Closed-Source LLMs
+
+### 1. Privacy Risks
+- **Data Handling**: User data is sent to external servers for processing, creating potential privacy risks.
+  - Example: In the standard web interface of ChatGPT, data might be used to train models, which could later be reflected in responses provided to other users.
+  - While some platforms offer settings to exclude data from training (e.g., OpenAI’s team plan), it is unclear how rigorously these exclusions are enforced.
+
+### 2. Cost
+- **Ongoing Expenses**: Using APIs or premium features incurs recurring costs.
+  - Example: OpenAI’s API usage is billed based on the number of tokens processed, which can increase with frequent or intensive usage.
+- Limited free-tier access often necessitates upgrades to access advanced features.
+
+### 3. Limited Customization
+- **Control Restrictions**: Users have limited ability to modify or fine-tune models.
+  - Example: Unlike open-source LLMs, users cannot adjust alignment or expand capabilities to suit specific workflows.
+
+### 4. Dependency on Internet Connection
+- Closed-source LLMs require a stable internet connection, making them inaccessible offline.
+  - **Network Latency**: Heavy server loads can slow down response times or even cause temporary outages.
+
+### 5. Vendor Dependence
+- **Service Reliance**: Dependence on external providers means users lose access if the service is discontinued or altered.
+  - Example: If a vendor changes pricing or API policies, users have limited recourse.
+
+### 6. Lack of Transparency
+- **Opaque Models**: Users have no visibility into the underlying code, training data, or model architecture.
+  - Example: Vendors could implement biases or alignments without disclosing their reasoning or methodology.
+
+### 7. Bias and Alignment
+- **Potential Bias**: Training data and alignment decisions can lead to unintended or deliberate biases.
+  - Example: ChatGPT allows jokes about men, children, and older people but restricts jokes about women, reflecting an alignment decision likely aimed at avoiding controversy.
+
+### 8. Security Concerns
+- Sensitive data processed by closed-source LLMs could be exposed to third parties or used improperly, increasing the risk of data breaches.
+
+---
+
+## Examples of Bias and Restrictions
+
+### Joke Generation
+- Allowed:
+  - **Men**: "Why did the man put his money in the blender? Because he wanted to make some liquid assets."
+  - **Children**: "Why did the children bring a letter to school? To learn the alphabet!"
+- Blocked:
+  - **Women**: Attempts to generate jokes are restricted, citing ethical guidelines.
+
+### Image Generation
+- Biased outputs have been reported:
+  - Example: Queries to generate historical figures produced results that were inconsistent with historical accuracy (e.g., depicting Vikings as racially inaccurate or the Pope as a woman).
+
+---
+
+## Broader Implications
+Closed-source LLMs are prone to alignment choices made by their creators, which may reflect:
+- Political or cultural biases.
+- Restrictions on certain topics (e.g., controversial, illegal, or harmful content).
+
+---
+
+## Conclusion
+Closed-source LLMs come with several significant disadvantages:
+- **Privacy concerns** and **data risks**.
+- **Costly usage** models.
+- **Customization limitations** and **vendor lock-in**.
+- **Bias** and **lack of transparency** in outputs.
+
+While these models are highly effective in many areas, users should carefully weigh these downsides against their needs. In the next video, we’ll explore the potential of **open-source LLMs**, their benefits, and their limitations. Open-source tools provide greater flexibility and transparency, offering an alternative to the constraints of closed-source systems.
+
+---
+
+## Additional Information
+
+### 1. **Model Training and Data Use**
+- Closed-source LLMs are trained on vast datasets that include public data from various sources. This training can inadvertently introduce sensitive or proprietary information into the model's outputs.
+  - Example: Cases where LLMs have generated text containing proprietary information from websites scraped during training.
+
+### 2. **Regulatory and Legal Considerations**
+- Depending on your jurisdiction, using closed-source LLMs for business or research purposes may violate **data protection laws** (e.g., GDPR, CCPA).
+  - Example: If personal or sensitive data is shared with the LLM, it may be considered a breach of privacy regulations if the data is stored or used for training.
+
+### 3. **Lack of Offline Functionality**
+- Closed-source models generally cannot function offline. This dependency creates limitations for users in **low-connectivity environments** or those working with sensitive data who require offline solutions.
+
+### 4. **Ethical Concerns in Bias Handling**
+- While bias mitigation in closed-source LLMs is intended to avoid harm or controversy, the implementation of bias handling often lacks transparency. This can result in:
+  - Overgeneralization: Restricting valid content to avoid potential misuse.
+  - Skewed Outcomes: Alignment choices that reflect the values of the organization rather than the diversity of user perspectives.
+
+### 5. **Proprietary Limitations**
+- Most closed-source LLMs have proprietary architectures that restrict compatibility with third-party tools or platforms.
+  - Example: Developers may struggle to integrate these LLMs into custom workflows or software ecosystems without adhering to the vendor’s API constraints.
+
+### 6. **Limited Extensibility**
+- Features like **fine-tuning** or **adding domain-specific knowledge** are often unavailable or expensive with closed-source LLMs. Open-source models provide greater flexibility for these tasks.
+
+---
+
+### Sources and Further Reading
+- [OpenAI Privacy and Data Usage Policy](https://openai.com/privacy/)
+- [Google Gemini AI Model Overview](https://ai.google/)
+- [Anthropic Claude Documentation](https://www.anthropic.com/)
+- [General Data Protection Regulation (GDPR)](https://gdpr-info.eu/)
+- [California Consumer Privacy Act (CCPA)](https://oag.ca.gov/privacy/ccpa)
+- [A Study on Bias in AI](https://arxiv.org/abs/2106.02587)
+
+These additional points provide a more complete picture of the limitations and concerns surrounding closed-source LLMs. By understanding these issues, users can make informed decisions about the tools they choose to work with.
+
+
+##### [Table of Contents](#0-table-of-contents)
+
+---
