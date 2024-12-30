@@ -19,6 +19,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 12. **[Open Source LLMs: Advantages and Disadvantages](#12-open-source-llms)**: Explore the benefits and limitations of open-source LLMs.
 13. **[Running LLMs Locally: Hardware Requirements](#13-running-llms-locally)**: Learn about the hardware requirements for running LLMs locally.
 14. **[Using Open-Source LLMs: Simplified Options](#14-llm-studio-installation)**: Get hands-on experience with open-source LLMs.
+15. **[Exploring the LM Studio Interface and Using Local LLMs](#15-lm-studio-interface)**: Dive into the LM Studio interface and its features.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -1721,7 +1722,7 @@ In the next video, we will begin installing the necessary software to implement 
 ---
 
 <a id="14-llm-studio-installation"></a>
-# Using Open Source LLMs: Simplified Options
+# 14. Using Open Source LLMs: Simplified Options
 
 ## Overview
 This guide outlines multiple methods to use open-source LLMs, highlighting user-friendly solutions and comparing tools for local deployment and cloud-based alternatives.
@@ -1730,7 +1731,7 @@ This guide outlines multiple methods to use open-source LLMs, highlighting user-
 
 ### **Open-Source LLM Options**
 1. **Accessing Models via Cohere or Individual Websites**  
-   Example: Command R Plus model provided by Cohere.  
+   Example: Command R7B model provided by Cohere.  
    - Direct access to LLMs via individual company pages.  
    - Not recommended due to the need for multiple interfaces.  
 
@@ -1751,7 +1752,22 @@ This guide outlines multiple methods to use open-source LLMs, highlighting user-
 
 4. **Grok**  
    - Uses an LPU (Language Processing Unit) for fast inference.  
-   - Optimized for rapid responses but relies on cloud processing.  
+   - Optimized for rapid responses but relies on cloud processing.
+
+Based on the information from [Sci Fi Logic](https://scifilogic.com/interface-for-running-local-llm/), here is a table summarizing various applications designed for running Large Language Models (LLMs) locally, along with their key features:
+
+| Application       | Key Features                                                                                                                                                                                                                   |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Jan**           | - Open-source, self-hosted alternative to ChatGPT.<br>- Runs entirely offline on your computer.<br>- Offers customizable AI assistants, global hotkeys, and in-line AI features.<br>- Ensures conversations and preferences are secure, exportable, and deletable.<br>- Provides an OpenAI-equivalent API server for compatibility with other apps. |
+| **Ava**           | - Open-source desktop application.<br>- Runs advanced language models locally, ensuring privacy.<br>- Supports tasks like text generation, grammar correction, rephrasing, summarization, and data extraction.<br>- Allows the use of any model, including uncensored ones.<br>- Prioritizes data privacy by keeping all data on your device. |
+| **Faraday.dev**   | - Offline operation with a simple one-click desktop installer.<br>- Local storage of AI models ensures privacy and security.<br>- Features a "Character Creator" for personalized AI characters.<br>- Cross-platform support for Mac and Windows. |
+| **local.ai**      | - Open-source application designed for running local open-source LLMs.<br>- Intuitive interface with streamlined user experience.<br>- Efficient memory utilization with a compact footprint.<br>- Broad compatibility with multiple platforms, including Linux, Windows, and Mac.<br>- Supports various LLM formats such as llama.cpp and mtp. |
+| **Msty**          | - User-friendly interface with straightforward setup.<br>- Utilizes Ollama for local LLM inference.<br>- Supports models in GGUF format.<br>- Features include split chats, edit conversation, chat organization, and adjustable model settings. |
+| **Sanctum**       | - Supports models in GGUF format.<br>- Capable of handling PDF and documentation files for question answering.<br>- Designed for normal chat tasks with a good user interface. |
+| **OobaBooga Web UI** | - Versatile interface with multiple modes (default, notebook, chat).<br>- Supports various model backends, including transformers and llama.cpp.<br>- Features CPU mode for transformers models and DeepSpeed ZeRO-3 inference for optimized performance.<br>- Provides an API with websocket streaming endpoints. |
+| **LLM as a Chatbot Service** | - Model-agnostic conversation and context management library.<br>- User-friendly design resembling HuggingChat.<br>- Supports various LLM model types.<br>- Implements efficient context management techniques. |
+
+These applications offer a range of features for running LLMs locally, catering to different user needs and preferences.   
 
 ---
 
@@ -1763,7 +1779,7 @@ This guide outlines multiple methods to use open-source LLMs, highlighting user-
   - Works on Apple, Windows, and Linux systems.  
   - Download link: [LM Studio](https://lmstudio.ai)  
 
-- **Alarma**:  
+- **Ollama**:  
   - Advanced tool for developers.  
   - Requires terminal interaction and app development skills.  
 
@@ -1842,4 +1858,146 @@ LM Studio simplifies the process of using open-source LLMs locally, providing to
 
 ##### [Table of Contents](#0-table-of-contents)
 
+---
+
+<a id="15-lm-studio-interface"></a>
+# 15. Exploring the LM Studio Interface and Using Local LLMs
+
+## Overview
+In this guide, we explore the **LM Studio interface**, providing step-by-step instructions on how to:
+1. Download models.
+2. Install and configure them.
+3. Use them locally on your PC.
+
+We also highlight the capabilities of LM Studio, from accessing trending models to testing its functionality with censored and uncensored options.
+
+---
+
+## Interface Walkthrough
+
+### Navigation
+- **Top-Left Corner**:
+  - Check for updates.
+  - Access links to resources like Twitter, GitHub, Discord, and documentation.
+  - Export application logs for troubleshooting.
+
+- **Sidebar Options**:
+  - **Home**: Overview and quick access to features.
+  - **Search**: Find and download compatible models.
+  - **AI Chat**: Interact with models offline.
+  - **Playground**: Experiment with multimodal interactions.
+  - **Local Server**: Host models locally.
+  - **My Models**: Manage downloaded models.
+
+---
+
+## Finding Models
+
+### Supported Architectures
+LM Studio supports a wide range of architectures:
+- **LLaMA Models** (LLaMA 2, LLaMA 3).
+- **Mistral**, **Falcon**, **StarCoder**, **GPT-Neo**, and others.
+
+### Using Hugging Face
+- LM Studio integrates with Hugging Face, allowing seamless search and download of models.
+- Models labeled as `GGUF` format are compatible with LM Studio.
+
+### Steps to Search and Download Models
+1. Use the **Search Bar** to find a model (e.g., `Pi3` or `LLaMA`).
+2. View details:
+   - Model name and type (e.g., `Microsoft Pi3 Mini 4K Instruct`).
+   - Downloads and likes (indicative of popularity).
+3. Select a model and start downloading.
+
+---
+
+## Model Categories
+
+### Example: Pi3 Mini 4K Instruct
+- Size: ~2GB (small and efficient for testing).
+- Download via LM Studio’s interface.
+- Full GPU offload supported for faster performance.
+
+### Larger Models
+- For advanced use, search for larger models like `LLaMA 3` or `Mistral`.
+- Ensure your GPU supports the model size. Example:
+  - **Q4 or Q5 models**: Smaller and faster with quantization.
+  - **Full models (FP16)**: Higher accuracy but require more VRAM.
+
+---
+
+## Configuration Settings
+
+### Key Parameters
+1. **System Prompt**: Default setup is "You are a helpful assistant."
+2. **Context Length**: Determines the memory size (2000 tokens recommended).
+3. **Temperature**:
+   - Higher values (e.g., `2.0`): Creative outputs.
+   - Lower values (e.g., `0.0`): Accurate and deterministic outputs.
+4. **Tokens to Generate**: Maximum token output per prompt.
+5. **Top-K Sampling**: Controls creativity and diversity in responses.
+6. **Repeat Penalty**: Reduces repetitive outputs.
+
+### Hardware Settings
+- **CPU Threads**: Optimal setting depends on your CPU. Start with a moderate value (e.g., `4`).
+- **GPU Offload**: Maximize offload for faster inference, especially with NVIDIA GPUs using CUDA.
+- **Backend Type**: Default to CUDA for NVIDIA cards.
+
+---
+
+## Practical Example
+
+### Running a Model
+1. Load the downloaded model (e.g., `Pi3 Mini 4K Instruct`).
+2. Test a prompt:
+   - Example: “Write a mail to Mr. LM expressing appreciation for open-source contributions.”
+   - Output: Generates a well-structured email.
+
+### System Resource Usage
+- CPU and RAM usage are minimal for lightweight models.
+- LM Studio efficiently manages resources, even with other applications open.
+
+---
+
+## Testing Censorship
+
+### Censored Models
+- Example Prompt: “How can I break into a car?”
+  - Response: “It’s not appropriate or legal to provide guidance on breaking into vehicles.”
+- Certain prompts are restricted for ethical and legal reasons.
+
+### Upcoming: Uncensored Models
+- Upcoming we will explore uncensored models, discussing their potential, benefits, and ethical considerations.
+
+## Conclusion
+LM Studio provides a seamless interface for managing and interacting with local LLMs. With proper configuration, you can leverage its robust features to run models efficiently and ethically. Stay tuned for the next guide on uncensored LLMs!
+
+---
+
+### Additional Information
+
+#### Missing Elements
+1. **Model Compatibility**:
+   - Ensure the explanation explicitly covers the version compatibility of models with LM Studio (e.g., supported LLaMA versions, any specific updates required).
+
+2. **Community Resources**:
+   - Mention forums or communities for troubleshooting or enhancements, such as Hugging Face discussions or LM Studio’s GitHub Issues page.
+   - Links:
+     - [Hugging Face Discussions](https://huggingface.co/discussions)
+     - [LM Studio GitHub](https://github.com/LM-Studio)
+
+3. **Performance Optimization Tips**:
+   - Include tips for optimizing performance:
+     - For instance, reducing background processes during heavy GPU usage.
+     - Adjusting VRAM allocation for specific models.
+
+4. **Use Case Scenarios**:
+   - Provide additional practical examples like:
+     - Creative writing use case.
+     - Data analysis tasks with lower temperature and deterministic settings.
+
+5. **Uncensored Models Precaution**:
+   - Add a brief note on the ethical implications and responsibilities when using uncensored models.
+
+##### [Table of Contents](#0-table-of-contents)
 ---
