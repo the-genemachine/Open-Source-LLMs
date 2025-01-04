@@ -22,6 +22,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 15. **[Exploring the LM Studio Interface and Using Local LLMs](#15-lm-studio-interface)**: Dive into the LM Studio interface and its features.
 16. **[Understanding Bias in LLMs](#16-uncensored-llms)**:Exploring Uncensored Open Source Models.
 17. **[Exploring the Standard Capabilities of LLMs](#17-llm-ethics)** : capabilities of standard open-source LLMs and explore what you can accomplish with them
+18. **[Multimodal LLMs and Vision Capabilities in LM Studio](#18-multimodal-llms)**: Explore the vision capabilities of LLM Studio and how to use multimodal LLMs.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -2240,8 +2241,7 @@ While the transcript mentions upcoming lectures on vision and multimodal functio
 **2. Privacy in Using Open-Source LLMs Locally**  
 One major advantage of running LLMs locally in LM Studio is privacy. Users can process sensitive data (e.g., private pictures, confidential documents) without concerns about data leaving their system. This aspect is critical for professionals working in healthcare, finance, or legal industries.
 
-**3. Expanding Programming Support**  
-The transcript touches on code generation and debugging but doesn’t detail how these features extend to frameworks or libraries.  
+**3. Expanding Programming Support**   
 - **Framework-Specific Assistance**: Ask for code tailored to frameworks like Flask, Django, or React.  
 - **Library Usage**: Generate examples for popular libraries like NumPy, pandas, or TensorFlow.  
 This feature is particularly helpful for learners and professionals adopting new tools.
@@ -2251,8 +2251,7 @@ In addition to simple text translations, LLMs can assist with:
 - **Cultural Nuances**: Translating phrases while maintaining context and tone.  
 - **Domain-Specific Language**: Translating legal, medical, or technical documents with appropriate terminology.  
 
-**5. Future Vision Capabilities**  
-The transcript mentions uploading private pictures for analysis, but potential use cases include:  
+**5. Future Vision Capabilities**    
 - **Medical Imaging**: Analyze X-rays or MRIs (for non-diagnostic purposes).  
 - **Educational Use**: Identify objects, describe scenes, or generate instructional material based on visuals.  
 
@@ -2272,3 +2271,129 @@ LLMs in LM Studio could integrate with tools like spreadsheets, databases, or AP
 ##### [Table of Contents](#0-table-of-contents)
 ---
 
+<a id="18-multimodal-llms"></a>
+# 18. Multimodal LLMs and Vision Capabilities in LM Studio
+
+#### Overview of Multimodal LLMs
+Multimodal LLMs are models designed to handle multiple types of inputs, including text, vision, and in some cases, audio. These models can:
+- **See**: Analyze and understand images using computer vision capabilities.
+- **Speak and Hear**: Engage in spoken interactions (though this feature may not yet be available in LM Studio).
+
+This transcript focuses on **vision capabilities**, detailing how to enable and use them in LM Studio.
+
+---
+
+#### Using Vision Models in LM Studio
+
+1. **What Are Vision Models?**
+   - Vision models, such as *Llama 3* and *Pi 3*, are equipped with adapters that enable image recognition and analysis.
+   - These models require a **vision adapter** alongside the primary model file to function.
+
+2. **Finding Vision-Enabled Models**
+   - Use the **Search** feature in LM Studio and look for terms like `lava` or specific model names, such as:
+     - `Llama 3`
+     - `Pi 3`
+     - `Mistral`
+   - Example models include:
+     - `Lava Llama 3 8B V1`
+     - `Pi 3 Mini Float16 Vision`
+
+3. **Downloading Required Components**
+   - **Model File**: The primary model used for processing.
+   - **Vision Adapter**: An essential add-on enabling image analysis.
+   - Ensure both are downloaded and configured before using vision features.
+
+---
+
+#### Setting Up Vision Models
+
+1. **Download the Model and Adapter**:
+   - Navigate to the desired model in the **Search** menu.
+   - Download both the **model file** and its **vision adapter**.
+     - Example: For `Lava Llama 3`, download the `Lava Llama 3 8B V` model and its vision adapter.
+
+2. **Load the Vision Model**:
+   - Go to **AI Chat** in LM Studio.
+   - Select the model from your library.
+   - Once both components are loaded, vision capabilities will be enabled.
+
+3. **Testing Vision Features**:
+   - Upload an image using the **Upload Picture** button in the interface.
+   - Example Use Case: Analyze an infographic.
+     - Upload the image.
+     - Ask questions like, *"Explain this image like I’m 12 years old."*
+
+---
+
+#### Example Workflow: Analyzing an Infographic
+
+1. **Setup**:
+   - Download an infographic on reinforcement learning from Hugging Face.
+   - Upload the image to LM Studio using the vision-enabled model.
+
+2. **Query**:
+   - Ask the model: *"What is on this picture? Explain it to me like I am 12 years old."*
+
+3. **Result**:
+   - The model will generate an explanation of the infographic, detailing concepts like initial language models, reward-based models, and merging techniques.
+
+---
+
+#### Important Notes
+
+1. **Adapters Are Essential**:
+   - Vision models will not function without their corresponding vision adapters.
+
+2. **Performance Considerations**:
+   - For smaller models (e.g., `Pi 3 Mini Float16`), minimal GPU power is required, making them accessible for most setups.
+
+3. **Flexibility Across Models**:
+   - Multimodal features are not limited to one type of model. Explore `Llama 3`, `Pi 3`, or `Mistral` models depending on your requirements.
+
+---
+
+#### Future Capabilities and Next Steps
+
+- While this chapter is focused on vision, future chapters will cover:
+  - **Speech and Audio Processing**: Additional interfaces and tools to enable these features.
+  - **Advanced Vision Applications**: Practical examples of leveraging vision models for specific tasks.
+
+---
+
+### Additional Information
+
+#### Missing Details
+
+1. **Potential Use Cases for Vision Models**:
+   - Beyond analyzing infographics, vision models can:
+     - Identify objects in images.
+     - Describe scenes or settings.
+     - Generate captions for photos.
+     - Assist in tasks like Optical Character Recognition (OCR).
+   - Example: Uploading a handwritten note to extract text.
+
+2. **GPU Recommendations for Vision Models**:
+   - Smaller models like `Pi 3 Mini` require minimal GPU power and are ideal for entry-level setups.
+   - Larger models (e.g., `Llama 3 8B Float16`) may need GPUs with at least 16 GB VRAM for optimal performance.
+
+3. **Limitations and Known Issues**:
+   - Some vision models might not fully support high-resolution images or complex visual data.
+   - Ensure the vision adapter is compatible with the model version to avoid errors.
+
+4. **Extensibility with Function Calling**:
+   - Vision models can be integrated with function-calling frameworks to enable dynamic image processing workflows, such as:
+     - Real-time scene analysis.
+     - Automated labeling for datasets.
+
+5. **Exploration of Fine-Tuned Vision Models**:
+   - Some models are fine-tuned for specific tasks, like medical imaging or autonomous vehicle systems. Consider exploring domain-specific variants if needed.
+
+---
+
+#### Sources
+1. [Hugging Face Models Hub](https://huggingface.co/models) - Repository of open-source models, including multimodal LLMs.
+2. [Open LLM Leaderboard](https://openllm-leaderboard.com/) - Ranking and details of LLMs, including vision-capable models.
+3. [Llama Documentation](https://llama.readthedocs.io/) - Information about the Llama family of models, including multimodal features.
+
+##### [Table of Contents](#0-table-of-contents)
+---
