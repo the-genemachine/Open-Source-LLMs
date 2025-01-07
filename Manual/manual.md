@@ -23,6 +23,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 16. **[Understanding Bias in LLMs](#16-uncensored-llms)**:Exploring Uncensored Open Source Models.
 17. **[Exploring the Standard Capabilities of LLMs](#17-llm-ethics)** : capabilities of standard open-source LLMs and explore what you can accomplish with them
 18. **[Multimodal LLMs and Vision Capabilities in LM Studio](#18-multimodal-llms)**: Explore the vision capabilities of LLM Studio and how to use multimodal LLMs.
+19. **[Vision Capabilities: Examples and Applications](#19-vision-capabilities)**: Learn about the applications and examples of vision capabilities in LLMs.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -2396,4 +2397,139 @@ This transcript focuses on **vision capabilities**, detailing how to enable and 
 3. [Llama Documentation](https://llama.readthedocs.io/) - Information about the Llama family of models, including multimodal features.
 
 ##### [Table of Contents](#0-table-of-contents)
+---
+
+
+<a id="19-vision-capabilities"></a>
+# 19. Vision Capabilities: Examples and Applications
+
+#### Introduction
+
+Vision-enabled LLMs (Large Language Models) are an incredible advancement, allowing models to **see**, **speak**, and **hear**. In this video, we focus on the *seeing* aspect: **computer vision**. This feature allows models to understand and interpret images, enabling a wide range of applications.
+
+#### Examples of Vision Capabilities
+
+1. **Microsoft's Research on Vision**:
+   - Microsoft demonstrated GPT-4 Vision capabilities in a research paper, showcasing over 100 practical examples.
+   - While the examples use GPT-4, similar tasks can be accomplished with open-source models.
+
+2. **Applications Highlighted by Greg Kamradt**:
+   - **Functions of Vision Models**: Describe, interpret, recommend, convert, extract, assist, and evaluate.
+   - These functions serve as the foundation for a variety of real-world use cases.
+
+#### Example Walkthrough: Converting Images to HTML
+- **Setup**: 
+  - A basic hand-drawn image (e.g., text with a box around it) is uploaded into LM Studio.
+  - The prompt instructs the LLM to generate an HTML webpage replicating the image.
+- **Result**: 
+  - The model outputs HTML and CSS code for the design, which can be tested on platforms like Replit.
+  - The example demonstrates the conversion of visual elements into functional code.
+
+#### Vision Model Functions
+
+1. **Describe**:
+   - Identify and describe the content of an image.
+   - Example: "What is in this picture?"
+
+2. **Interpret**:
+   - Provide detailed analyses, such as:
+     - **Medical interpretations**: Identifying fractures in X-rays.
+     - **Technical analyses**: Decoding complex diagrams.
+   - Example: Analyzing reinforcement learning diagrams.
+
+3. **Recommend**:
+   - Offer suggestions and feedback.
+   - Example: Evaluating a YouTube thumbnail and recommending improvements.
+
+4. **Convert**:
+   - Transform images into other formats or data types.
+   - Examples:
+     - Handwritten text → Digital text.
+     - Sketch → HTML webpage.
+
+5. **Extract**:
+   - Extract specific information from images.
+   - Examples:
+     - Document extraction (e.g., IDs, invoices).
+     - Qualitative data extraction.
+
+6. **Assist**:
+   - Answer questions about processes or diagrams.
+   - Example: "How does reinforcement learning work based on this diagram?"
+
+7. **Evaluate**:
+   - Perform assessments and quality checks.
+   - Examples:
+     - Aesthetic evaluation of a design.
+     - Checking the accuracy of data in an image.
+
+#### Advanced Use Cases
+
+- **Medicine**:
+  - Identifying fractures or anomalies in X-rays and MRIs.
+  - Diagnosing dental issues.
+- **Autonomous Vehicles**:
+  - Assessing whether there’s enough space to maneuver around obstacles.
+- **Creative Applications**:
+  - Creating bedtime stories based on a child’s drawing.
+  - Explaining memes or other humorous content.
+- **Mathematical Reasoning**:
+  - Solving problems involving spatial reasoning, like determining cardinal directions.
+
+#### Limitations and Future Potential
+
+1. **Open Source vs. Closed Source**:
+   - Closed-source models like GPT-4 Vision currently outperform open-source models in many scenarios.
+   - Open-source models provide privacy and flexibility, running entirely on local machines.
+
+2. **Model Improvements Over Time**:
+   - Current open-source models may lack polish compared to their closed-source counterparts.
+   - These models represent the baseline and will continue to improve rapidly.
+
+#### Key Takeaways
+
+- Vision models can perform a wide range of tasks: **describe**, **interpret**, **recommend**, **convert**, **extract**, **assist**, and **evaluate**.
+- Closed-source models are more advanced but rely on external servers, while open-source models prioritize privacy and local control.
+- Your creativity is the only limit to how you can apply these tools in real-world scenarios.
+
+Let your imagination run wild, experiment with different use cases, and see how vision-enabled models can revolutionize your workflows. **Privacy meets functionality**—all on your local machine.
+
+---
+
+### Additional Information
+
+#### Key Considerations
+1. **Support for Vision Models in Open-Source LLMs**:
+   - Open-source vision-enabled models often require **vision adapters**. These adapters bridge the gap between text-based LLMs and image processing tasks.
+   - While models like **LLaVA (LLaMA with Visual Adapters)** are popular, alternatives include Pi-3 Vision and Mistral Vision.
+
+2. **Applications Beyond Examples**:
+   - **Cultural Analysis**: Analyze artwork or historical documents.
+   - **Retail**: Automate product labeling and inventory checks using product images.
+   - **Accessibility**: Assist visually impaired users by describing surroundings or objects.
+
+3. **Limitations**:
+   - **Hardware Requirements**: High-end GPUs or CPUs are often necessary for running large vision-enabled models locally.
+   - **Accuracy Variations**: Open-source models may struggle with highly specialized or ambiguous images compared to closed-source systems like GPT-4 Vision.
+
+4. **Related Tools and Platforms**:
+   - **LLaVA**: A popular framework for integrating vision adapters with LLaMA-based models.
+   - **Hugging Face**: Hosts multiple vision-capable models and their corresponding adapters.
+   - **DeepSpeed**: Optimizes multi-modal processing for models requiring vision tasks.
+
+#### Links to White Papers and Resources
+1. [GPT-4 Vision by OpenAI](https://openai.com/research/gpt-4-vision)
+   - Explores multimodal capabilities, including examples and applications.
+2. [LLaVA: Large Language and Vision Assistant](https://arxiv.org/abs/2305.11669)
+   - Details on LLaVA's architecture and its integration with vision adapters.
+3. [ViLT: Vision-and-Language Transformer](https://arxiv.org/abs/2102.03334)
+   - General architecture for multi-modal understanding.
+4. [Microsoft Research Multimodal Applications](https://www.microsoft.com/en-us/research/publication/multimodal-transformers/)
+   - Insights into how multi-modal transformers work and their benchmarks.
+5. [Hugging Face Vision Models](https://huggingface.co/models?pipeline_tag=visual-question-answering)
+   - Repository of vision-enabled open-source models.
+
+
+##### [Table of Contents](#0-table-of-contents)
+
 ---
