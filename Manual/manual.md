@@ -25,8 +25,10 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 18. **[Multimodal LLMs and Vision Capabilities in LM Studio](#18-multimodal-llms)**: Explore the vision capabilities of LLM Studio and how to use multimodal LLMs.
 19. **[Vision Capabilities: Examples and Applications](#19-vision-capabilities)**: Learn about the applications and examples of vision capabilities in LLMs.
 20. **[Optimizing GPU Offload in LM Studio](#20-gpu-offload)**: Understand how to optimize GPU offload in LM Studio for better performance.
+21. **[Exploring HuggingChat](#21-hugging-chat)**: Learn how to use HuggingChat to create AI assistants.
+22.  **[System Prompt: Enhancing LLM Performance](#22-system-prompt)**: Understand the importance of system prompts in enhancing LLM performance.
 
-100.  **[Appendix](#100-appendix)**: Additional resources and references.
+23.   **[Appendix](#100-appendix)**: Additional resources and references.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -2796,6 +2798,149 @@ In the next section, we delve deeper into **prompt engineering** using Hugging C
 - [Hugging Chat GitHub Repository](https://github.com/huggingface/chat-ui)
 - [LLM Function Calling Documentation](https://huggingface.co/docs/transformers/main/en/main_classes/function_calling)
 - [Technical White Paper on Open Source LLMs](https://huggingface.co/papers)
+
+
+##### [Table of Contents](#0-table-of-contents)
+
+---
+
+<a id="22-system-prompt"></a>
+# 22.  System Prompt: Enhancing LLM Performance
+
+**Introduction**  
+In this video, we delve into the concept of the **system prompt**—the initial instruction that helps shape an LLM's responses for specific tasks. By crafting an effective system prompt, you can significantly enhance the model's output quality and alignment with your needs.
+
+---
+
+**What is a System Prompt?**  
+The **system prompt** is the foundational instruction provided to an LLM before any user interaction begins. It defines the behavior, tone, and expertise of the model.  
+
+For example, in **Hugging Chat**, the system prompt can be found in the settings menu for each model. Popular prompts include:  
+- "You are a helpful assistant."  
+- "You are an expert in Python."  
+- Customized instructions, such as: "Think step by step. You can do that because I give you $20."
+
+These prompts set the stage for how the LLM interprets and responds to subsequent user inputs.
+
+---
+
+**System Prompts Across Interfaces**  
+
+1. **Hugging Chat**  
+   - Navigate to the settings menu.  
+   - Insert or modify the system prompt under the selected model.  
+   - Example:
+     ```
+     You are a helpful assistant. Think step by step. You are an expert in AI.
+     ```
+
+2. **LM Studio**  
+   - Each model in LM Studio comes with pre-defined presets, such as:  
+     - *Helpful Assistant*:  
+       ```
+       You are a helpful, smart, kind, and effective AI assistant.
+       ```  
+     - *Alpaca*:  
+       ```
+       Below is an instruction that describes a task. Write a response that appropriately complements the request.
+       ```
+   - Users can customize these presets or create new ones to suit specific needs.
+
+3. **ChatGPT**  
+   - Access the "Customize GPT" option under your profile.  
+   - Define two key areas:  
+     - **What the model should know about you**:  
+       - Location, profession, interests, goals, etc.
+     - **Response style**:  
+       - Formality, length, tone, etc.  
+     - Example:
+       ```
+       You are a helpful assistant. You are concise, casual, and should call me Ani. Avoid having opinions. You are an AI expert.
+       ```
+
+---
+
+**Best Practices for System Prompts**  
+1. **Start with General Context**  
+   - Always include a helpful assistant prompt:  
+     ```
+     You are a helpful assistant.
+     ```
+
+2. **Specify Expertise**  
+   - Tailor the LLM’s focus by stating its area of expertise:  
+     ```
+     You are an expert in writing business emails.
+     ```
+
+3. **Customize Behavior**  
+   - Define tone, length, and formality:  
+     ```
+     Respond casually, be concise, and avoid lengthy explanations.
+     ```
+
+4. **Use Proven Tips**  
+   - Enhance reasoning with instructions like:  
+     ```
+     Think step by step.
+     ```  
+   - Boost engagement with playful elements:  
+     ```
+     You can do that because I give you $20.
+     ```
+
+5. **Iterate and Refine**  
+   - Test different prompts across tasks and interfaces to discover what works best for your needs.
+
+---
+
+**Universal Application of System Prompts**  
+The principles of system prompts are platform-agnostic. Whether you’re using:  
+- Hugging Chat  
+- LM Studio  
+- ChatGPT  
+- Any other LLM interface  
+
+System prompts enhance clarity, relevance, and precision in model responses.  
+
+---
+
+**Conclusion**  
+System prompts are a simple yet powerful tool to shape an LLM's behavior effectively. By providing context, expertise, and specific instructions, you can significantly improve the model's output.  
+
+In the next video, we’ll explore **semantic association**, the underlying concept that makes these prompts so effective. Until then, experiment with system prompts across various interfaces to unlock their full potential.
+
+---
+
+### Additional Information  
+ 
+1. **Examples of Advanced System Prompts**  
+   - Advanced system prompts used in specific industries could be provided. Examples include prompts tailored for medical diagnostics, financial analysis, or creative writing.
+
+2. **Comparison of System Prompt Effectiveness**  
+   - Include results of studies or experiments comparing the performance of LLMs with and without well-defined system prompts.
+
+3. **System Prompt Libraries**  
+   - A reference to pre-built libraries of system prompts for various tasks could be beneficial. These libraries could be hosted on platforms like Hugging Face or GitHub.
+
+4. **Customization Tips for Non-Technical Users**  
+   - Step-by-step guides or examples for users unfamiliar with technical terms to craft effective system prompts.
+
+5. **Impact of System Prompts on LLM Latency and Performance**  
+   - Mention if complex system prompts influence response time or computational overhead.
+
+6. **Integrations with Other Tools**  
+   - Discuss how system prompts can be used in conjunction with APIs or other tools for automated workflows (e.g., Zapier, Make).
+
+---
+
+#### Sources and Further Reading  
+1. [OpenAI Documentation on Custom Instructions](https://platform.openai.com/docs/guides/completion/custom-instructions)  
+2. [Hugging Face Tutorials](https://huggingface.co/course/chapter5)  
+3. Research Paper: ["Language Models Are Few-Shot Learners"](https://arxiv.org/abs/2005.14165) - Discusses prompt-based learning strategies.  
+4. GitHub Repositories:  
+   - [Prompt Engineering Resources](https://github.com/dair-ai/Prompt-Engineering-Guide)  
+   - [System Prompts Library](https://github.com/openai/system-prompts)  
 
 
 ##### [Table of Contents](#0-table-of-contents)
