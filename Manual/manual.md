@@ -27,8 +27,9 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 20. **[Optimizing GPU Offload in LM Studio](#20-gpu-offload)**: Understand how to optimize GPU offload in LM Studio for better performance.
 21. **[Exploring HuggingChat](#21-hugging-chat)**: Learn how to use HuggingChat to create AI assistants.
 22.  **[System Prompt: Enhancing LLM Performance](#22-system-prompt)**: Understand the importance of system prompts in enhancing LLM performance.
+23.  **[Prompt Engineering: A Key to Better Outputs](#23-prompt-engineering)**: Learn about prompt engineering techniques and best practices.
 
-23.   **[Appendix](#100-appendix)**: Additional resources and references.
+24.   **[Appendix](#100-appendix)**: Additional resources and references.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -2947,13 +2948,121 @@ In the next video, we’ll explore **semantic association**, the underlying conc
 
 ---
 
+<a id="23-prompt-engineering"></a>
+# 23. Prompt Engineering: A Key to Better Outputs
+
+Prompt engineering is critical for obtaining accurate and contextually appropriate responses from LLMs. Next we demonstrate why prompt engineering matters and how even small adjustments can significantly improve results.
+
+#### Why Prompt Engineering is Important
+
+Let’s consider a simple scenario:
+
+> **Prompt:**  
+> I have a 12-liter jug and a 6-liter jug. I want to measure 6 liters. How do I do it?
+
+A typical human response would be straightforward:  
+"Fill the 6-liter jug to the top, and you’re done."  
+
+But when posed to ChatGPT, the response often involves multiple convoluted steps:
+
+1. Fill the 6-liter jug to its maximum capacity.  
+2. Pour the contents into the 12-liter jug.  
+3. Note the remaining space in the 12-liter jug.  
+4. Repeat additional steps to adjust quantities.  
+
+This complexity arises because **ChatGPT doesn't think like humans do**. Instead, it:
+- Breaks down the input into **word tokens**.
+- Calculates probabilities to determine the most likely response.
+- Follows statistical reasoning, which may not align with logical human problem-solving.
+
+---
+
+#### Improving with Prompt Engineering
+
+To achieve better results, we can refine the prompt. Here's an improved version:
+
+> **Refined Prompt:**  
+> I have a 12-liter jug and a 6-liter jug. I want to measure 6 liters. List the most logical answer in the real world based on human reasoning to the problem, ranging from the simplest to the more complex. Let’s think about it step by step.
+
+The response becomes significantly more logical:
+- **Simplest Approach:**  
+  Fill the 6-liter jug to the top. You now have exactly 6 liters.
+- **More Complex Approach:**  
+  Use a combination of the 12-liter and 6-liter jugs to measure incrementally.
+
+By providing **clearer instructions** and requesting logical, step-by-step reasoning, the model’s output aligns better with human expectations.
+
+---
+
+#### Key Insights
+- **LLMs Do Not Think Logically:**  
+  LLMs process inputs statistically, not logically. While this is excellent for tasks like coding, it may lead to unintuitive results in reasoning tasks.
+  
+- **Role of Prompt Refinement:**  
+  Adding roles, goals, or reasoning instructions significantly improves the relevance and accuracy of the model's response.
+
+- **General Application Across LLMs:**  
+  These strategies are effective across different models and interfaces, including:
+  - GPT 3.5/4 (free and paid versions)
+  - Future GPT versions
+  - Open-source models like LLaMA, Mistral, and Grok.
+
+---
+
+#### What’s Next?
+
+In the upcoming chapters, we’ll dive deeper into:
+1. **Best Practices for Prompt Engineering:**  
+   Simplest techniques for effective results.
+   
+2. **What to Avoid in Prompts:**  
+   Common mistakes that lead to poor outputs.
+   
+3. **Advanced Solutions:**  
+   Handling complex scenarios with structured prompts.
+
+Prompt engineering isn’t rocket science, but it is a powerful tool to maximize the potential of any LLM. Whether you’re working in ChatGPT or any other LLM platform, mastering this skill will always yield better outputs.
+
+
+---
+
+### Additional Information
+
+#### Key Considerations
+- **Contextual Framing:** When crafting prompts, providing additional context about the task or audience can help models align better with user needs. For example, stating the problem domain or the expected response style.
+- **Role-based Prompts:** Defining a role for the LLM, such as "You are a data analyst" or "You are a teacher explaining concepts to a 10-year-old," helps guide the response style and content.
+- **Iteration and Feedback:** Improving outputs may require iterative refinement of prompts. Always evaluate the model's response and adjust prompts to achieve the desired level of specificity and accuracy.
+
+#### Techniques to Explore
+- **Chain-of-Thought Prompting:** Encourage step-by-step reasoning by explicitly stating in the prompt: "Let’s think through this step by step."
+- **Few-shot Learning:** Include examples of the desired input-output behavior in the prompt to guide the model effectively.
+- **Zero-shot Role Assignment:** Provide explicit roles or expertise areas without examples for tasks requiring domain-specific responses.
+- **Semantic Priming:** Utilize keywords or phrases that prime the LLM to focus on specific concepts or areas.
+
+#### Resources and References
+1. [OpenAI Documentation on Prompt Design](https://platform.openai.com/docs/guides/completion)
+2. [Hugging Face Guide to Fine-tuning and Prompt Engineering](https://huggingface.co/docs)
+3. White Paper: "Language Models are Few-Shot Learners" ([ArXiv Link](https://arxiv.org/abs/2005.14165))
+4. White Paper: "Emergent Abilities of Large Language Models" ([ArXiv Link](https://arxiv.org/abs/2206.07682))
+
+#### Examples and Tools
+- **Examples:** Revisit and adapt templates shared in platforms like [Prompt Engineering by OpenAI](https://openai.com/research/prompt-engineering) or GitHub repositories with curated prompts.
+- **Tools:** Experiment with tools like OpenAI Playground or Hugging Chat to refine and test prompts iteratively.
+
+##### [Table of Contents](#0-table-of-contents)
+
+---
+
+
+
+---
+
 <a id="100-appendix"></a>
 # Appendix
 
 An appendix in your document is a valuable space to include supplementary information, resources, or additional content that supports the main text without disrupting its flow. Here are ideas on what you can start adding to your appendix based on the context of this chat about LLMs and vision-enabled models:
 
 ---
-
 ### Suggested Content for Your Appendix
 
 #### 1. **Glossary of Terms**
