@@ -29,8 +29,9 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 22. **[System Prompt: Enhancing LLM Performance](#22-system-prompt)**: Understand the importance of system prompts in enhancing LLM performance.
 23. **[Prompt Engineering: A Key to Better Outputs](#23-prompt-engineering)**: Learn about prompt engineering techniques and best practices.
 24. **[Semantic Association and Instruction Prompting](#24-semantic-association)**: Explore semantic association and instruction prompting in LLMs.
+25. **[The Structured Prompt](#25-structured-prompting)**: Understand the structured prompting approach for effective AI interactions.
 
-25.   **[Appendix](#100-appendix)**: Additional resources and references.
+26.   **[Appendix](#100-appendix)**: Additional resources and references.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -3140,8 +3141,118 @@ We’ve covered the basics of semantic association. Remember, every word you pro
 
 ---
 
+<a id="25-structured-prompting"></a>
+# The Structured Prompt
+
+#### Overview
+A structured prompt is a simple yet effective approach to crafting optimized prompts for better results from Language Models (LLMs). It consists of three main components: 
+1. **Modifier**
+2. **Topic**
+3. **Additional Modifiers**  
+
+These elements together form a well-defined prompt that provides clear instructions to the LLM.
+
+---
+
+#### Components of a Structured Prompt
+
+1. **Modifier**
+   - Specifies the type of desired response.
+   - Examples: Blog post, Twitter thread, research paper, or email.
+
+2. **Topic**
+   - The main subject of the prompt.
+   - Example: Healthy eating, investing money, or programming tips.
+
+3. **Additional Modifiers**
+   - Provide specific requirements or details for the response.
+   - Examples:
+     - **Target Audience:** Professionals, students, beginners.
+     - **Keywords:** Relevant for SEO (Search Engine Optimization).
+     - **Style:** Simple, formal, or casual.
+     - **Length:** Word count or detailed structure.
+
+---
+
+#### Example: Blog Post Prompt
+
+Here’s an example of a structured prompt for generating a blog post:
+
+**Prompt:**  
+*"Write a blog post about healthy eating. Address it to working professionals and use keywords that are relevant for SEO. Write the text in a simple, understandable style so that it is easy to read and comprehend. The length should be 800 words, and the text should be well-structured."*
+
+---
+
+#### Results in Action
+
+Using the above prompt in ChatGPT, we get:
+
+**Output:**  
+**A Busy Professional's Guide to Healthy Eating for Optimal Performance**  
+- Introduction: In the hustle of daily life, ...  
+- Section 1: Quick meals for busy days ...  
+- Section 2: Balancing nutrients ...
+
+*Note: The output is approximately 800 words and tailored for the target audience.*
+
+---
+
+#### Analysis of the Prompt
+
+- **Modifier:** Blog post – Instructs the LLM to create an in-depth and structured output.  
+- **Topic:** Healthy eating – The primary subject of the text.  
+- **Target Audience:** Working professionals – Ensures the content is relevant and practical for a specific demographic.  
+- **Additional Modifiers:**  
+  - Keywords for SEO.
+  - Style: Simple and easy to read.
+  - Length: 800 words.
+
+---
+
+#### Flexible Prompts: Variations and Customization
+
+You can adapt this structure by changing the content within brackets to suit your needs.
+
+**Example:**  
+*"Write a Twitter thread about investing money. Address it to beginners and focus on clear, concise language. The length should be around 500 words, and the content should be simple and well-structured."*
+
+---
+
+**Output:**  
+**Twitter Thread on Investing Money for Beginners**  
+1️⃣ Start small. Invest what you can afford without stress.  
+2️⃣ Explore index funds – they're beginner-friendly.  
+3️⃣ Be consistent – investing is a long-term game.  
+
+Notice the key differences:
+- Language is simpler and more conversational.
+- Emojis and short sections make it suitable for Twitter.
+
+---
+
+#### Applying Structured Prompts Across Platforms
+
+Structured prompts can be used in various interfaces, including:
+- **LM Studio:** Simply paste the prompt in the input field.
+- **Hugging Chat:** Works seamlessly with structured prompts.
+- **Other Platforms:** Grok, OpenAI APIs, or custom-built LLM applications.
+
+---
+
+#### Key Takeaways
+
+- **Definition:** A structured prompt combines a modifier, topic, and additional modifiers to provide clarity and context.  
+- **Advantages:** Ensures better outputs by giving the LLM precise instructions.  
+- **Usability:** Works across all LLM platforms and interfaces.  
+- **Customization:** Tailor the prompt by adjusting modifiers, topics, and details to fit your specific needs.
+
+---
+
+### Next Steps
+Next, we will explore **Instruction Prompting**, another straightforward yet powerful concept in prompt engineering. Stay tuned to learn how instructions can refine and enhance your outputs further.
 
 
+##### [Table of Contents](#0-table-of-contents)
 ---
 
 <a id="100-appendix"></a>
