@@ -30,8 +30,9 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 23. **[Prompt Engineering: A Key to Better Outputs](#23-prompt-engineering)**: Learn about prompt engineering techniques and best practices.
 24. **[Semantic Association and Instruction Prompting](#24-semantic-association)**: Explore semantic association and instruction prompting in LLMs.
 25. **[The Structured Prompt](#25-structured-prompting)**: Understand the structured prompting approach for effective AI interactions.
+26. **[Instructional Prompt](#26-instructional-prompting)**: Learn about instructional prompting and its role in AI interactions.
 
-26.   **[Appendix](#100-appendix)**: Additional resources and references.
+27.   **[Appendix](#100-appendix)**: Additional resources and references.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -3250,6 +3251,138 @@ Structured prompts can be used in various interfaces, including:
 
 ### Next Steps
 Next, we will explore **Instruction Prompting**, another straightforward yet powerful concept in prompt engineering. Stay tuned to learn how instructions can refine and enhance your outputs further.
+
+
+##### [Table of Contents](#0-table-of-contents)
+---
+
+
+<a id="26-instructional-prompting"></a>
+# 26. Instructional Prompting
+
+---
+
+### **Introduction**
+In this chapter, we’ll explore **instruction prompting** and discuss three actionable tips to optimize your outputs. These tips are practical, straightforward, and significantly improve the responses from an LLM.
+
+---
+
+### **What is Instruction Prompting?**
+Instruction prompting involves giving explicit directions to the model. For example:
+
+**Prompt:**  
+"Write the word 'funny' backward."  
+
+**Response:**  
+"ynnuf"
+
+This is a basic instruction that the model follows. Instruction prompting works by clearly telling the LLM what you want it to do.
+
+---
+
+### **Examples of Instruction Prompting**
+1. **Blog Post Creation:**  
+   **Prompt:** "Write a blog post on healthy eating."
+   - The AI generates a detailed blog post.
+
+2. **Text Analysis:**  
+   **Prompt:** "Analyze this text and enclose all names in brackets."  
+   - The AI processes the input and applies the instruction correctly.
+
+These are examples of simple, yet effective instruction prompts.
+
+---
+
+### **Enhancing Instruction Prompts**
+A few small additions can make a big difference in the quality of outputs. Let’s focus on three specific tips:
+
+---
+
+#### **1. Let’s Think Step by Step**
+- This phrase helps the LLM break down tasks logically and sequentially.
+- Example:
+   **Prompt:** "How can I install Python?"
+   - Without step-by-step guidance, the AI may skip crucial steps.
+   - With **"Let's think step by step,"** the response becomes more detailed:
+      1. Open your web browser.  
+      2. Search for "Python download."  
+      3. Navigate to the official website and download the installer.  
+      4. Run the installer and follow the setup instructions.
+
+   This improves context management, making the process easier for both the model and the user.
+
+---
+
+#### **2. Take a Deep Breath**
+- This phrase acts as a calming and focusing prompt for the model.
+- Adding it often leads to more structured and thoughtful outputs.
+
+---
+
+#### **3. Motivation and Incentives**
+- Using motivational phrases like **"You can do it"** or even adding a playful incentive like **"I’ll pay you $20"** can encourage the model to engage with the prompt more creatively or attentively.
+- While the exact mechanism isn’t fully understood, studies suggest it leads to better results.
+
+---
+
+### **Combining These Tips**
+You can combine these phrases for even better outputs:
+
+**Example Prompt:**  
+"How can I install Python and play Snake? Take a deep breath and think step by step."  
+
+**Response:**  
+1. Download Python from the official website.  
+2. Install Python using the provided installer.  
+3. Search for open-source Snake game code on GitHub.  
+4. Download and run the script using Python.  
+
+**Output Note:** The model might even acknowledge the encouragement:  
+"Thank you for the encouragement and the metaphorical $20—it’s always nice to have support."
+
+---
+
+### **Key Takeaways**
+- **Instruction Prompting:** You provide explicit instructions to the LLM for execution.
+- **Tips for Better Outputs:**
+   1. **Let’s think step by step** – Enhances logical responses.  
+   2. **Take a deep breath** – Leads to thoughtful answers.  
+   3. **Motivational incentives** – Boosts creativity and engagement.  
+
+These simple phrases can significantly improve prompt outcomes, even if they sound unconventional. The next time you create a prompt, try these techniques to maximize the effectiveness of your interactions with the model.
+
+---
+
+### **Next Steps**
+In upcoming chapters, we’ll dive deeper into **semantic association** and explore advanced techniques to make your prompts even more powerful. See you there!
+
+### Additional Information
+
+#### **Conceptual Enhancements**
+- **Cognitive Science Behind "Motivational Phrasing"**  
+   Studies suggest that phrases like "Take a deep breath" or "You can do it" mimic supportive interpersonal communication. This enhances task engagement and cognitive processing for large language models (LLMs).
+
+   - Reference: [Cognitive Load Theory](https://doi.org/10.1017/S0956796808007007) (Journal of Memory and Language)
+   - Reference: [Positive Framing in AI Prompts](https://www.frontiersin.org/articles/10.3389/frai.2021.689405/full) (Frontiers in Artificial Intelligence)
+
+#### **Empirical Evidence**
+- **"Step-by-Step" Optimization**  
+   Research supports that breaking tasks into smaller, logical steps aligns with the token prediction mechanism of LLMs. This ensures a linear context flow for better coherence.  
+   - Reference: OpenAI's paper on GPT-3: [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165)
+
+- **Prompt Framing for Efficiency**  
+   Including framing phrases like "Step-by-step" or "Take a deep breath" reduces entropy in LLM outputs, resulting in more structured and accurate responses.  
+   - Reference: [Fine-tuning and Prompt Engineering Techniques](https://arxiv.org/abs/2104.07038)
+
+#### **Practical Applications**
+- **Collaborative Use Cases:**  
+   Instructional prompting can be adapted for:
+   - **Education:** For creating logical explanations and tutorials.
+   - **Debugging:** For coding tasks, encouraging structured problem-solving outputs.
+   - **Creative Writing:** Enhancing imaginative and engaging text generation.
+
+- **Multi-Language Prompting:**  
+   Considerations for non-English prompts—phrases like "Let’s think step by step" or motivational phrases might need linguistic and cultural adaptation for optimal impact.
 
 
 ##### [Table of Contents](#0-table-of-contents)
