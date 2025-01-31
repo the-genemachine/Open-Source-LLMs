@@ -37,6 +37,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 29.   **[Appendix](#100-appendix)**: Additional resources and references.
 30.   **[Reverse Prompt Engineering](#29-reverse-prompt-engineering)**: Learn about reverse prompt engineering and its applications.
 31.   **[Chain of Thought Prompting](#31-chain-of-thought-prompting)**: Explore chain of thought prompting and its role in AI interactions.
+32.   **[Tree of Thought Prompting](#32-tree-of-thought-prompting)**: Understand the concept of tree of thought prompting and its applications.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -3958,8 +3959,172 @@ For a comprehensive understanding of CoT prompting, consider reviewing the follo
 - **Towards Understanding Chain-of-Thought Prompting: An Empirical Study of What Matters**: This research delves into the factors that influence the effectiveness of CoT prompting, providing insights into its strengths and limitations. ([research.google](https://research.google/pubs/towards-understanding-chain-of-thought-prompting-an-empirical-study-of-what-matters/?utm_source=chatgpt.com))
 
 
+##### [Table of Contents](#0-table-of-contents)
+
+---
+
+<a id="32-tree-of-thought-prompting"></a>
+# 32. Tree of Thought Prompting
+
+Tree of Thought (ToT) prompting is one of the most advanced and effective prompting techniques available, allowing models to iteratively refine their reasoning by exploring multiple thought paths. This method builds on **self-consistency prompting** but operates at a higher level, guiding the model through structured decision-making.
+
+---
+
+### **Understanding the Tree of Thought Concept**
+
+The ToT framework is inspired by human reasoning. When tackling a problem, we don’t settle for the first idea—we explore multiple potential solutions before narrowing them down to the best choice. ToT prompting mimics this process, allowing AI to:
+
+1. **Generate multiple solutions** for a given problem.
+2. **Evaluate and refine** each solution by iterating through logical steps.
+3. **Select the most optimal solution** and further expand upon it.
+4. **Arrive at a final output** through structured decision-making.
+
+According to **Google DeepMind’s research**, ToT prompting increases success rates by up to **74%**, often outperforming traditional prompting strategies by a factor of **9-10x** in complex reasoning tasks. ([Source](https://arxiv.org/pdf/2305.10601.pdf))
+
+---
+
+### **Breaking Down the ToT Process**
+
+#### **Step 1: Generate Diverse Initial Solutions**
+We start by prompting the model to generate **multiple solutions** from different perspectives. For example:
+
+```plaintext
+I need to negotiate a higher salary with my boss. 
+I am employed at a large company, and thanks to my contributions, revenue increased by 5% last quarter.
+Generate three salary negotiation strategies based on the following perspectives:
+1. A data-driven analyst
+2. A rational, unemotional thinker
+3. A professional negotiator
+```
+
+**Why this works:**
+- It provides **multiple diverse starting points** for problem-solving.
+- It allows the model to leverage **semantic association** by considering different approaches.
+
+---
+
+#### **Step 2: Evaluate and Narrow Down the Best Option**
+After obtaining three responses, we refine the reasoning:
+
+```plaintext
+Which of the three solutions is the most effective? 
+Justify your selection based on logical reasoning.
+```
+
+The model will analyze the strengths and weaknesses of each response, selecting the one that aligns best with professional negotiation principles.
+
+---
+
+#### **Step 3: Expand on the Best Solution**
+Once we identify the strongest approach, we **generate deeper insights** by prompting the model to refine the idea:
+
+```plaintext
+Generate three additional variations of the selected solution, 
+each with a unique approach tailored to different negotiation scenarios.
+```
+
+This process allows us to explore variations that might work better in specific situations, such as:
+- **A consultative approach:** Presenting a business case backed by SWOT analysis.
+- **A collaborative team leader strategy:** Framing the request as beneficial for the entire team.
+- **A strategic business partner perspective:** Aligning salary increases with company growth.
+
+---
+
+#### **Step 4: Personalizing the Strategy**
+Since the AI cannot fully understand personal work dynamics, we integrate our own knowledge:
+
+```plaintext
+My boss prefers data-driven arguments that emphasize long-term value.
+Based on this, refine the strategy to maximize impact.
+```
+
+The model will now **adjust its approach** to cater specifically to the boss’s preferences.
+
+---
+
+#### **Step 5: Constructing the Final Output**
+The last step is to **refine the best approach into a detailed, structured conversation**:
+
+```plaintext
+Provide a fully structured conversation starter for my salary negotiation,
+including responses for possible objections.
+```
+
+The AI will now generate a dialogue-based output, helping us **simulate** the negotiation in advance.
+
+---
+
+### **Why Tree of Thought Prompting Works**
+- **Encourages structured decision-making**: AI doesn’t settle on the first response—it explores multiple logical branches before arriving at an answer.
+- **Improves accuracy and relevance**: Through multiple iterations, the AI eliminates weak responses and refines strong ones.
+- **Emulates human reasoning**: Instead of providing a single response, the AI **evaluates, refines, and expands** before producing the final output.
+
+---
+
+### **Key Takeaways**
+ToT prompting is useful for **complex problem-solving**, **strategy development**, and **logical reasoning**. The methodology follows a structured **branching approach**:
+
+1. **Generate multiple solutions.**
+2. **Select the most promising option.**
+3. **Expand the selected option into three refined versions.**
+4. **Analyze and customize based on specific needs.**
+5. **Develop a fully structured final output.**
+
+This technique **demands more computation**, but it significantly improves decision-making accuracy, making it **one of the most powerful tools in prompt engineering**.
+
+---
+
+### **Additional Information**
+#### **Key Research & Papers**
+- **Tree of Thoughts: Deliberate Problem Solving with Large Language Models**  
+  ([arXiv: 2305.10601](https://arxiv.org/pdf/2305.10601.pdf)) – Google DeepMind’s foundational research on ToT prompting.
+  
+- **Self-Consistency Improves Chain of Thought Reasoning**  
+  ([Google Research](https://arxiv.org/abs/2203.11171)) – Demonstrates how ToT prompting builds on CoT for improved logical reasoning.
+
+- **Tree of Thought for Multi-Step Reasoning**  
+  ([Microsoft Research](https://www.microsoft.com/en-us/research/publication/tree-of-thought-for-multi-step-reasoning/?utm_source=chatgpt.com)) – A study showing the benefits of hierarchical reasoning in LLMs.
+
+
+#### **Limitations of Tree of Thought (ToT) Prompting**
+
+While ToT prompting enhances problem-solving capabilities in Large Language Models (LLMs), it has certain limitations:
+
+- **Increased Resource Consumption**: ToT prompting can be computationally intensive and time-consuming, especially for complex problems. ([digital-adoption.com](https://www.digital-adoption.com/tree-of-thoughts-prompting/?utm_source=chatgpt.com))
+
+- **Inefficiency for Simpler Tasks**: For tasks that don't require extensive reasoning, ToT prompting may be inefficient due to its complexity. ([learnprompting.org](https://learnprompting.org/docs/advanced/decomposition/tree_of_thoughts?srsltid=AfmBOorZk1_hNsfWp38xTyh_MisxkY1ChHQBnrMt5_s0JrWuIjNnQc02&utm_source=chatgpt.com))
+
+**Applications of Tree of Thought Prompting**
+
+ToT prompting has been effectively applied in various domains:
+
+- **Mathematical Reasoning**: Enhances the ability of LLMs to solve complex mathematical problems by exploring multiple reasoning paths. ([learnprompting.org](https://learnprompting.org/docs/advanced/decomposition/tree_of_thoughts?srsltid=AfmBOorZk1_hNsfWp38xTyh_MisxkY1ChHQBnrMt5_s0JrWuIjNnQc02&utm_source=chatgpt.com))
+
+- **Creative Writing**: Improves the coherence and creativity of generated text by evaluating different narrative paths. ([learnprompting.org](https://learnprompting.org/docs/advanced/decomposition/tree_of_thoughts?srsltid=AfmBOorZk1_hNsfWp38xTyh_MisxkY1ChHQBnrMt5_s0JrWuIjNnQc02&utm_source=chatgpt.com))
+
+- **Puzzles and Games**: Increases success rates in tasks like puzzles by allowing the model to backtrack and explore alternative solutions. ([learnprompting.org](https://learnprompting.org/docs/advanced/decomposition/tree_of_thoughts?srsltid=AfmBOorZk1_hNsfWp38xTyh_MisxkY1ChHQBnrMt5_s0JrWuIjNnQc02&utm_source=chatgpt.com))
+
+**Comparison with Chain of Thought (CoT) Prompting**
+
+While both ToT and CoT prompting aim to enhance the reasoning capabilities of LLMs, they differ in approach:
+
+- **Exploration of Reasoning Paths**: ToT prompting enables models to explore and evaluate multiple reasoning paths, enhancing decision-making and solution accuracy. ([learnprompting.org](https://learnprompting.org/docs/advanced/decomposition/tree_of_thoughts?srsltid=AfmBOoq8YqhHrBawB-IR1XkgIdbbkrtCxczdZIDfuXUD3jOkzgm7yjU3&utm_source=chatgpt.com))
+
+- **Backtracking Capability**: ToT mimics human problem-solving by using a tree structure where nodes represent partial solutions, allowing the model to backtrack when necessary. ([learnprompting.org](https://learnprompting.org/docs/advanced/decomposition/tree_of_thoughts?srsltid=AfmBOoq8YqhHrBawB-IR1XkgIdbbkrtCxczdZIDfuXUD3jOkzgm7yjU3&utm_source=chatgpt.com))
+
+**White Papers**
+
+For an in-depth understanding of Tree of Thought prompting, refer to the following white papers:
+
+- Yao, S., et al. (2023). *Tree of Thoughts: Deliberate Problem Solving with Large Language Models*. arXiv preprint arXiv:2305.10601. ([arxiv.org](https://arxiv.org/abs/2305.10601?utm_source=chatgpt.com))
+
+- Long, J. (2023). *Large Language Model Guided Tree-of-Thought*. arXiv preprint arXiv:2305.08291. ([arxiv.org](https://arxiv.org/abs/2305.08291?utm_source=chatgpt.com))
 
 ##### [Table of Contents](#0-table-of-contents)
+---
+
+
+
 ---
 <a id="100-appendix"></a>
 # Appendix
@@ -4036,4 +4201,5 @@ An appendix in your document is a valuable space to include supplementary inform
 2. **Be concise**: Keep explanations clear and to the point.
 3. **Use structured formatting**: Utilize tables, bullet points, and headings for clarity.
 
-Let me know which sections resonate with your goals, and I can help expand on specific topics!
+---
+
