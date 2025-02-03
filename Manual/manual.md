@@ -39,6 +39,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 31.   **[Chain of Thought Prompting](#31-chain-of-thought-prompting)**: Explore chain of thought prompting and its role in AI interactions.
 32.   **[Tree of Thought Prompting](#32-tree-of-thought-prompting)**: Understand the concept of tree of thought prompting and its applications.
 33.   **[Combining Prompting Techniques](#33-combining-prompting-techniques)**: Learn how to combine different prompting techniques for effective AI interactions.
+34.   **[Creating AI Assistants with HuggingChat](#34-creating-ai-assistants)**: Learn how to create AI assistants using HuggingChat.
 
 <a id="1-course-overview"></a>
 # 1. Overview
@@ -4320,6 +4321,185 @@ Take a deep breath and think step by step.
 
 
 ##### [Table of Contents](#0-table-of-contents)
+
+---
+
+<a id="34-creating-ai-assistants"></a>
+# 34. Creating AI Assistants in HuggingChat and Beyond
+
+#### **Overview**  
+Now that we've explored various **prompt engineering techniques**, it's essential to **leverage assistants** to streamline interactions with **LLMs (Large Language Models)**.  
+In this chapter, you'll learn how to:  
+✅ **Create your own assistant** using **HuggingChat**  
+✅ **Customize system prompts** for better responses  
+✅ **Utilize pre-built assistants**  
+✅ **Understand how AI agents can collaborate** in future frameworks  
+
+---
+
+## **1️⃣ Creating AI Assistants in HuggingChat**  
+
+### **🔹 Step 1: Exploring Pre-Built Assistants**  
+Before creating an assistant, you can **explore existing ones**.  
+
+1. Navigate to **HuggingChat**  
+2. Click on **Assistants**  
+3. View the most popular assistants (**sorted by usage**)  
+4. Select an assistant and inspect:  
+   - The **model in use** (e.g., Mistral 7B, Command-R)  
+   - The **system prompt**  
+   - The **direct URL**  
+
+**Example**: The **"GPT-5 Assistant"** is widely used, but upon inspection, it actually runs on **Mistral 2897B** and is **not** GPT-5.  
+
+### **🔹 Step 2: Using a Pre-Built Assistant**  
+If an assistant meets your needs:  
+- **Click to activate**  
+- **Enter a prompt** and test its performance  
+- **Review system behavior** (e.g., for an **Image Generator Assistant**, an API call may be made instead of using a native diffusion model)  
+
+---
+
+## **2️⃣ Building Your Own Assistant**  
+
+### **🔹 Step 1: Creating a Custom Assistant**  
+1. Navigate to **Assistants > Create New Assistant**  
+2. Configure the assistant by defining:  
+   - **Avatar** (optional)  
+   - **Name** (e.g., `"Python Helper"`)  
+   - **Description**:  
+     ```
+     You are an expert in Python programming, assisting users with coding problems.
+     ```
+   - **Model Selection**:  
+     - Options: **Cohere, Mistral, Command-R, etc.**  
+     - Choose based on response quality  
+
+3. **Define System Prompt**  
+   ```
+   You are a helpful assistant and expert in Python code. 
+   Provide clear, well-structured responses.
+   ```
+
+4. **Set Default Start Message**  
+   ```
+   Code a simple Snake game in Python.
+   ```
+
+5. **Enable or Disable Internet Access**  
+   - Default  
+   - Web Search  
+   - Domain-Specific Search  
+   - GitHub Repositories for context  
+
+6. **Click Create → Activate Your Assistant**  
+
+---
+
+## **3️⃣ Testing the Custom Assistant**  
+
+### **🔹 Step 1: Running the Assistant**  
+1. **Activate the assistant** and enter the **starter message**.  
+2. **Analyze the response** (e.g., **Python Snake Game Code**).  
+
+### **🔹 Step 2: Testing the Output**  
+1. Copy the generated code  
+2. Run it in **Replit (or local environment)**  
+3. **Debug issues** (e.g., incorrect snake movement, game logic flaws)  
+
+🔹 **Observation**: The assistant provided a **functional** but **imperfect** Snake game. Further refinements may be necessary.  
+
+---
+
+## **4️⃣ Alternative: Creating Assistants in ChatGPT**  
+
+1. In **ChatGPT**, navigate to **"My GPTs"**  
+2. Click **Create a GPT**  
+3. Configure similar options as in HuggingChat  
+4. Adjust **system prompts and behaviors**  
+
+⚠️ **Note:** ChatGPT-based assistants operate on **closed-source** models, whereas HuggingChat and **AI agents in development will be open-source**.  
+
+---
+
+## **5️⃣ Future: AI Agents & Collaboration**  
+
+- In future lectures, we will:  
+  ✅ Build **open-source AI agents**  
+  ✅ Enable **collaboration** between AI agents  
+  ✅ Create **multi-agent workflows** for automation  
+
+💡 **Concept:** Assign **specialized roles** to multiple AI agents, allowing them to work **together** on complex projects.  
+
+---
+
+## **Final Takeaways**  
+
+🔹 **HuggingChat allows the creation of AI assistants** with **custom system prompts**  
+🔹 **Existing assistants can be explored and modified** to fit your needs  
+🔹 **Building AI agents locally will provide even greater control & collaboration**  
+🔹 **Assistants can integrate web search, GitHub, and APIs for better contextual knowledge**  
+
+🚀 **Next Step:** Explore **Grok**, another open-source alternative for **quick responses**.  
+
+---
+
+### **Additional Information: Creating AI Assistants**  
+
+#### **🔹 Enhancing Assistant Capabilities**  
+1. **Multi-Model Integration**  
+   - Assistants can leverage multiple models (e.g., Mistral for general tasks, Code Llama for coding).  
+   - Open-source LLM orchestration frameworks like **LangChain** and **LlamaIndex** allow chaining multiple LLMs for **dynamic responses**.  
+
+2. **Custom Knowledge Injection**  
+   - Assistants can be **fine-tuned** with **domain-specific knowledge** by:  
+     - Uploading **custom datasets**  
+     - Linking **external APIs & knowledge bases**  
+     - Embedding **company-specific documentation**  
+
+3. **Multi-Modal Assistants**  
+   - Future versions of assistants may support **text, vision, and audio inputs**.  
+   - Open-source models like **LLaVA (LLaMA with Vision)** allow assistants to **process images & videos**.  
+   - Assistants can leverage **Whisper** for **speech-to-text processing**.  
+
+---
+
+#### **🔹 Security & Privacy Considerations**  
+1. **Data Confidentiality**  
+   - HuggingChat states that user **conversations remain private** and are **not used for training**.  
+   - However, using **self-hosted assistants** with open-source LLMs ensures **full data privacy**.  
+
+2. **Deployment Considerations**  
+   - **Cloud vs Local**:  
+     - Cloud-based assistants (HuggingChat, OpenAI) rely on external servers.  
+     - Locally hosted assistants (via **Ollama, LM Studio, or Docker-based setups**) ensure **full control**.  
+   - **Edge AI Deployments**:  
+     - AI agents can run on **Raspberry Pi, Jetson Nano, or edge devices** for **offline processing**.  
+
+---
+
+#### **🔹 White Papers & Reference Materials**  
+📄 **AI Assistants & Agent Architectures**  
+- [Hugging Face Assistants Documentation](https://huggingface.co/docs)  
+- [LangChain: Building AI Agents](https://www.langchain.com/)  
+- [Self-Hosting LLMs with LM Studio](https://lmstudio.ai/)  
+
+📄 **Multi-Agent Collaboration**  
+- [Multi-Agent LLM Systems - Stanford AI](https://arxiv.org/abs/2305.07033)  
+- [Autonomous AI Agents (AutoGPT & BabyAGI)](https://arxiv.org/abs/2304.03442)  
+
+📄 **Fine-Tuning & Custom Knowledge Integration**  
+- [Fine-Tuning Open-Source LLMs](https://huggingface.co/blog/fine-tune)  
+- [Using Embeddings for AI Assistants](https://www.pinecone.io/learn/vector-database/)  
+
+
+##### [Table of Contents](#0-table-of-contents)
+
+---
+
+
+##### [Table of Contents](#0-table-of-contents)
+
 ---
 <a id="100-appendix"></a>
 # Appendix
