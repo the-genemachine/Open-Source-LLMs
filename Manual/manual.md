@@ -52,6 +52,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 3. **[Retrieval-Augmented Generation (RAG) and Vector Databases: A Technical Overview](#38-rag-vector-databases)**: Explore vector databases and embedding models in LLMs.
 4. **[Installing and Configuring AnythingLLM for Local AI Applications](#39-installing-local-server)**: Enabling the development of AI applications with local language models
 5. **[Building a Local RAG Application with AnythingLLM](#40-building-local-rag)**: Learn how to build a local RAG application using AnythingLLM.
+6. **[ Enhancing AI Capabilities with API Integration](#41-api-integration)**: Explore how to enhance AI capabilities through API integration.
 
 
 **[Appendix](#100-appendix)**: Additional resources and references.
@@ -5775,9 +5776,273 @@ To deepen your understanding of RAG systems and their integration with LLMs, the
 #### [Table of Contents](#0-table-of-contents)
 
 ---
+<a id="41-api-integration"></a>
+# Function Calling in AnythingLLM: Enabling Web Search and API Integrations  
+
+## Overview  
+
+In this section, we explore how to enable **function calling** in **AnythingLLM** to integrate **web search capabilities** with a locally hosted AI chatbot. This allows the chatbot to fetch **real-time data** from the internet while maintaining a **local and private** setup.  
+
+This setup leverages API keys to access search engines such as **SerpAPI**, **Google Search API**, and **Scraper APIs**, enabling our AI assistant to pull **up-to-date information** without relying on outdated local model knowledge.  
+
+---
+
+## **Step 1: Setting Up a New Workspace for Function Calling**  
+
+1. **Create a new workspace:**  
+   - Open **AnythingLLM**  
+   - Navigate to **New Workspace**  
+   - Name it **Function Calling**  
+   - Press **Save**  
+
+2. **Configure Chat Settings:**  
+   - Go to **Settings**  
+   - Keep **Chat Mode** set to **default**  
+   - Ensure that **LM Studio** is selected as the model backend  
+   - Verify that your **LLM model** supports function calling  
+
+---
+
+## **Step 2: Configuring the Function Calling Agents**  
+
+1. **Navigate to "Configure Agent Skills"**  
+   - Enable the following capabilities:  
+     - **Web Search**  
+     - **Web Browsing**  
+   - By default, RAG capabilities (long-term memory, document summarization, and website scraping) are already enabled  
+
+2. **Selecting a Search API Provider**  
+   - Choose between:  
+     - **SerpAPI** (Google Search)  
+     - **Scraper APIs**  
+     - **Bing Search**  
+   - SerpAPI is recommended due to its high accuracy and ease of use  
+
+3. **Obtaining an API Key for Web Search**  
+   - Visit [SerpAPI Website](https://serpapi.com/)  
+   - Sign up for an account  
+   - Navigate to **API Keys**  
+   - Generate and **copy** the API key  
+
+4. **Adding the API Key to AnythingLLM**  
+   - In **AnythingLLM**, navigate to **Web Search API Key**  
+   - Paste the **SerpAPI Key**  
+   - Press **Save**  
+
+---
+
+## **Step 3: Testing Web Search Functionality**  
+
+### **Using Web Search in AnythingLLM**  
+
+1. Open the **Function Calling** workspace  
+2. Start a **new chat session**  
+3. Use the **@agent** command to invoke web search  
+4. Example query:  
+   ```
+   @agent What is the Bitcoin price today?
+   ```
+5. The chatbot should now:  
+   - Call the **SerpAPI**  
+   - Retrieve the latest **Bitcoin price**  
+   - Display results from multiple financial sources  
+
+### **Example Output from the LLM:**  
+```
+Agent is attempting to call web browsing tool using SerpAPI...
+Searching for "Bitcoin price today"...
+Results:
+1. CoinDesk - $58,000
+2. CoinMarketCap - $60,000
+3. Coinbase - $59,600
+4. CoinGecko - $58,950
+5. CoinTelegraph - $58,195 (-4% in 24hrs, Market Cap: $1.15T)
+```
+
+This confirms that our **local AI model** can now fetch real-time web data via **API calls**.
+
+---
+
+## **Step 4: Exploring More Function Calling Capabilities**  
+
+Beyond web search, **AnythingLLM** supports additional function calling features:  
+
+1. **File Conversion & Saving**  
+   - Convert and save files from chat responses  
+2. **Website Scraping**  
+   - Extract structured data from websites  
+3. **Chart Generation**  
+   - Create data visualizations directly from user queries  
+4. **Integration with APIs (Google, OpenAI, etc.)**  
+   - Expand the assistant’s capabilities with external APIs  
+
+---
+
+## **Key Takeaways**  
+
+- **Function calling** in AnythingLLM enables the AI assistant to retrieve **real-time information**  
+- **API keys** are required for web search integration (SerpAPI, Google API, Scraper APIs)  
+- The chatbot now supports **dynamic knowledge retrieval** beyond static model knowledge  
+- **Local deployment** ensures **privacy** while extending AI capabilities  
+
+---
+
+## **Next Steps**  
+
+- Explore **additional API integrations**  
+- Implement **custom AI agents** with **multi-step workflows**  
+- Enable **more advanced function calls** such as **document parsing and data extraction**  
+
+---
+
+## **Git Commit Message**  
+```
+feat: Implement function calling in AnythingLLM with web search API integration  
+- Enabled function calling via SerpAPI for real-time data retrieval  
+- Configured API key authentication for secure search requests  
+- Improved AI assistant's ability to fetch up-to-date information  
+```  
+
+## Additional Information
+
+#### **Overview**  
+Function calling in **AnythingLLM** allows a locally hosted AI assistant to **retrieve real-time data**, interact with **external APIs**, and execute **specific tasks** such as **web browsing, data scraping, file conversion, and chart generation**. This feature significantly enhances the capabilities of **open-source AI models**, making them more **dynamic and functional** beyond their static knowledge.  
+
+This section details how to enable and configure function calling in **AnythingLLM**, specifically focusing on **web search API integration** to allow real-time queries.  
+
+---
+
+## **Step 1: Configuring the Function Calling Agents**  
+
+### **Creating a New Workspace for Function Calling**  
+1. **Navigate to AnythingLLM**  
+2. **Create a New Workspace**  
+   - Click **New Workspace**  
+   - Name it **Function Calling**  
+   - Press **Save**  
+
+### **Enabling Function Calling in Agents**  
+1. Go to **Settings → Agent Configurations**  
+2. **Select a Model with Function Calling Support**  
+   - Use **LLM Studio** or **Llama3** (must explicitly support tool calling)  
+3. Click **Configure Agent Skills** and enable:  
+   - **Web Search**  
+   - **Web Scraping**  
+   - **Document Parsing**  
+   - **Chart Generation (Optional)**  
+
+---
+
+## **Step 2: Adding Web Search API**  
+
+### **Choosing a Search API Provider**  
+- **SerpAPI (Google Search API)** – Recommended for accurate search results  
+- **Bing Search API** – Alternative with built-in Microsoft AI features  
+- **Scraper APIs** – Useful for niche web searches  
+
+### **Obtaining and Adding the API Key**  
+1. **Sign Up at SerpAPI**  
+   - Visit [SerpAPI](https://serpapi.com/)  
+   - Navigate to **API Keys**  
+   - Generate and **copy** the key  
+
+2. **Integrate API Key in AnythingLLM**  
+   - Navigate to **Web Search API Key**  
+   - Paste the **SerpAPI Key**  
+   - Click **Save**  
+
+---
+
+## **Step 3: Testing Function Calling for Web Search**  
+
+### **Using Function Calling in Chat**  
+1. Open the **Function Calling** workspace  
+2. Start a **new thread**  
+3. Use the **@agent** command to invoke web search  
+4. Example query:  
+   ```
+   @agent What is the current price of Ethereum?
+   ```
+5. The assistant will:  
+   - **Call the API** (SerpAPI, Bing, etc.)  
+   - **Retrieve real-time search results**  
+   - **Display summarized output**  
+
+### **Example Response from the LLM**  
+```
+Agent is attempting to call web browsing tool using SerpAPI...
+Searching for "Ethereum price today"...
+Results:
+1. CoinDesk - $3,200
+2. CoinMarketCap - $3,250
+3. Coinbase - $3,180
+4. Binance - $3,195
+```
+This confirms that the local AI assistant **can fetch real-time data**.
+
+---
+
+## **Step 4: Expanding Function Calling Capabilities**  
+
+### **Additional Features**  
+Beyond web search, **AnythingLLM** supports:  
+1. **File Conversion & Saving**  
+   - Convert responses into structured reports  
+2. **Web Scraping**  
+   - Extract structured data from targeted websites  
+3. **Chart Generation**  
+   - Generate data visualizations  
+4. **API Integrations (Google, OpenAI, Custom APIs)**  
+   - Extend AI functionality with external services  
+
+---
+
+## **Security and Privacy Considerations**  
+- **Local Processing:** AnythingLLM ensures all data processing happens **locally**  
+- **Minimal External Requests:** Only web search APIs require outbound connections  
+- **Encrypted API Keys:** Always store API keys securely  
+
+---
+
+## **Key Takeaways**  
+- **Function calling** in AnythingLLM enables **real-time knowledge retrieval**  
+- **Web search API integration** extends the assistant’s ability beyond static knowledge  
+- **Local deployment** ensures **privacy and security** while leveraging external tools  
+- **Function calling agents** can be expanded for **document parsing, data extraction, and automation**  
+
+---
+
+## **Next Steps**  
+- Configure **AI Agents** for **multi-step workflows**  
+- Implement **custom API requests** for specialized tasks  
+- Enable **text-to-speech** for an **interactive AI experience**  
+
+--- 
+
+### **Related Concepts**  
+- **Retrieval-Augmented Generation (RAG) in AI**  
+- **Embedding Models & Vector Databases**  
+- **Local AI Assistants vs Cloud-Based AI APIs**  
+
+### **White Papers & References**  
+1. **Retrieval-Augmented Generation for Large Language Models** ([NVIDIA Research](https://developer.nvidia.com/ai-literature))  
+2. **OpenAI API Documentation for Function Calling** ([OpenAI](https://platform.openai.com/docs/))  
+3. **LangChain Function Calling Guide** ([LangChain Docs](https://python.langchain.com/))  
+4. **Vector Search for LLMs in AI Applications** ([Pinecone](https://www.pinecone.io/))  
+
+## **Sources**  
+- [SerpAPI Documentation](https://serpapi.com/)  
+- [AnythingLLM GitHub](https://github.com/Mintplex-Labs/anything-llm)  
+- [LangChain Function Calling API](https://python.langchain.com/en/latest/)  
+- [HuggingFace LLM Studio](https://huggingface.co/docs)  
 
 
 ##### [Table of Contents](#0-table-of-contents)
+
+---
+
+##### [Table of Contents](#0-table-of-contents)
+
 
 <a id="100-appendix"></a>
 # Appendix

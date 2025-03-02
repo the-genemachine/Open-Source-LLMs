@@ -49,5 +49,6 @@ Udemy prompts :
 
 Refine this transcript in a technical manner using Github styling. Do not use icons.
 
-If there is anything missing from <Topic> that may have been overlooked, please add it under the heading "Additional Information." List links to applicable sources if possible. Provide links to white papers if possible. Supply a single git commit message for this topic.
+If there is anything missing from < Topic > that may have been overlooked, please add it under the heading "Additional Information." List links to applicable sources if possible. Provide links to white papers if possible. Supply a single git commit message for this topic. List the sources separately at the bottom of your response.
+
 
