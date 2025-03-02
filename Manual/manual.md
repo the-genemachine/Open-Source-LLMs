@@ -51,6 +51,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 2. **[Function Calling in LLMs: A Technical Overview](#37-function-calling-llms)**: Learn about the technical aspects of function calling in LLMs.
 3. **[Retrieval-Augmented Generation (RAG) and Vector Databases: A Technical Overview](#38-rag-vector-databases)**: Explore vector databases and embedding models in LLMs.
 4. **[Installing and Configuring AnythingLLM for Local AI Applications](#39-installing-local-server)**: Enabling the development of AI applications with local language models
+5. **[Building a Local RAG Application with AnythingLLM](#40-building-local-rag)**: Learn how to build a local RAG application using AnythingLLM.
 
 
 **[Appendix](#100-appendix)**: Additional resources and references.
@@ -5580,9 +5581,202 @@ For deeper insights, the following **white papers** provide foundational knowled
 
 ##### [Table of Contents](#0-table-of-contents)
 
+---
 
+<a id="40-building-local-rag"></a>
+# Building a Local RAG Application with AnythingLLM
+
+#### **Overview**  
+In this section, we will build our first **Retrieval-Augmented Generation (RAG) application** using **AnythingLLM**. This application will allow **local document retrieval and querying** while maintaining **maximum privacy**.  
+
+Once set up, you will be able to **upload any data**, including PDFs, YouTube transcripts, GitHub repositories, and websites. The system will process and store this information in a **vector database**, enabling efficient querying.  
+
+To proceed, ensure that **LM Studio remains open**, as closing it will terminate the **local server** required for the RAG pipeline.  
 
 ---
+
+### **Step 1: Creating a New Workspace in AnythingLLM**  
+1. Open **AnythingLLM**.  
+2. Navigate to **New Workspace** and create a workspace.  
+   - Example Name: `RAG Application`  
+3. Save the workspace.  
+4. Open the newly created workspace and start a **new thread**.  
+
+---
+
+### **Step 2: Uploading Data Sources**  
+AnythingLLM supports multiple **data ingestion methods**, including:  
+
+#### **1. Uploading Local Files (PDFs, TXT, CSV, etc.)**  
+1. Click on **Upload Document**.  
+2. Select the desired **PDF, TXT, or CSV** file.  
+3. The file will now appear in **Documents**.  
+4. Click **Save and Embed** to store the document in the **vector database**.  
+
+#### **2. Fetching Website Content**  
+1. Navigate to **Data Connectors > Fetch Website**.  
+2. Enter the URL of the website you want to index.  
+   - Example: `https://useanything.com/`  
+3. Click **Fetch Website**.  
+4. Once processed, move the document to the **workspace** and **embed it** into the vector database.  
+
+#### **3. Integrating YouTube Transcripts**  
+1. Navigate to **Data Connectors > YouTube Transcript**.  
+2. Copy and paste the YouTube URL.  
+3. Click **Collect Transcript**.  
+4. The **entire transcript** will be processed and stored as a document.  
+5. Move it to the workspace and **embed it**.  
+
+#### **4. Importing Data from GitHub Repositories**  
+1. Go to **Data Connectors > GitHub Repository**.  
+2. Enter the **repository URL**.  
+3. Provide a **GitHub access token** (if required).  
+4. Specify the **branch** (default: `main`).  
+5. Click **Submit** to import files from the repository.  
+
+#### **5. Bulk Link Scraping**  
+1. Use **Bulk Link Scraper** to process multiple pages from a website.  
+2. Enter the root domain, and AnythingLLM will extract **all sublinks**.  
+3. Select which pages to **store** in the vector database.  
+
+---
+
+### **Step 3: Configuring the RAG System**  
+To ensure **optimal retrieval and accuracy**, configure the following settings in **AnythingLLM**:  
+
+#### **General Settings**  
+- **Chat Mode:** Set to `Chat`.  
+- **Short-Term Memory:** Defaults to **20 previous interactions**.  
+- **Context Window Size:** Match this to your LLM’s maximum token capacity.  
+
+#### **Embedding Model & Vector Database**  
+- **Vector Database:** Use **LanceDB** (default) or **Pinecone** for external storage.  
+- **Maximum Context Snippets:** Set to `4`.  
+- **Document Similarity Threshold:** Leave at default, but adjust if needed.  
+
+#### **Agent Configuration**  
+1. Navigate to **Configure Agent Skills**.  
+2. Define **custom agents** that specialize in certain document types.  
+
+---
+
+### **Step 4: Testing the RAG Pipeline**  
+To verify that the **RAG application** is retrieving correct information, follow these steps:  
+
+#### **Baseline Query (Before Uploading Documents)**  
+Ask a question that is **not** in the default LLM knowledge base.  
+Example:  
+```
+What is AnythingLLM?
+```  
+- The response will likely be **"I do not have information on AnythingLLM."**  
+
+#### **Query After Document Embedding**  
+1. Upload the **AnythingLLM documentation** as a document.  
+2. Embed it in the **vector database**.  
+3. Re-run the query:  
+   ```
+   What is AnythingLLM?
+   ```  
+4. The LLM will now retrieve **accurate information** from the embedded document.  
+
+Expected Output:  
+```
+AnythingLLM is an AI business intelligence tool that provides privacy-focused local retrieval capabilities. 
+It supports multiple data types, including PDFs, GitHub repositories, and YouTube transcripts.
+```
+
+By embedding relevant documents, the LLM gains **instant access** to external knowledge while keeping all data **private**.
+
+---
+
+### **Step 5: Expanding the RAG Application**  
+Once the basic RAG pipeline is operational, consider the following **enhancements**:  
+
+1. **Adding APIs for Live Search**  
+   - **Google Search API** for real-time data retrieval.  
+   - **Wolfram Alpha API** for computational tasks.  
+   - **Custom Knowledge Graphs** for domain-specific data.  
+
+2. **Custom Agents for Specialized Tasks**  
+   - Configure agents to **handle specific document types**.  
+   - Example: `Legal Assistant` for legal documents, `Financial Analyst` for financial reports.  
+
+3. **Integration with Function Calling**  
+   - Enhance **document-based** retrieval by integrating function calling for **external tools**.  
+   - Example: Use **LangChain** to connect vector retrieval with **dynamic function execution**.  
+
+4. **Automating Data Ingestion Pipelines**  
+   - Set up **scheduled imports** from cloud storage or databases.  
+   - Automate data refresh intervals for **large document repositories**.  
+
+---
+
+### **Key Takeaways**  
+- **RAG (Retrieval-Augmented Generation)** enhances LLM responses by integrating **external document retrieval**.  
+- **AnythingLLM** enables a fully **local, privacy-focused** RAG pipeline.  
+- Data is **indexed in a vector database**, allowing **fast, precise** querying.  
+- The LLM searches **only in relevant document clusters**, ensuring **highly accurate responses**.  
+- This system supports **multiple data sources**, including PDFs, GitHub, YouTube, and websites.  
+
+ 
+In the next section, we will explore **AI Agents** and their ability to **automate workflows** using **RAG + Function Calling**.  
+
+---
+
+## Additional Information
+
+While the previous section provides a comprehensive guide to building a local Retrieval-Augmented Generation (RAG) application using AnythingLLM, the following additional considerations and resources may enhance your implementation:
+
+### 1. Hardware Requirements
+
+To ensure optimal performance when running local Large Language Models (LLMs) and RAG applications, consider the following hardware specifications:
+
+- **CPU**: Modern multi-core processor
+- **RAM**: At least 16GB (32GB or more recommended)
+- **Graphics Card**: An NVIDIA GPU with at least 8GB VRAM is preferable for better performance; however, CPU-only setups are also supported with quantized models.
+
+*Source: [How to implement a RAG system using AnythingLLM and LM Studio](https://digitaconnect.com/how-to-implement-rag-using-anythingllm-and-lm-studio/)*
+
+### 2. Alternative Vector Databases
+
+While AnythingLLM comes with a built-in vector database, you might consider integrating alternative vector stores based on your specific requirements:
+
+- **Chroma**: An open-source vector database that can be integrated with local models for text embedding and generation. Detailed setup instructions are available in the following tutorial:
+
+  *Source: [RAG Tutorial: Exploring AnythingLLM and Vector Admin](https://dev.to/worldlinetech/rag-tutorial-exploring-anythingllm-and-vector-admin-4i3c)*
+
+### 3. Community Discussions and Experiences
+
+Engaging with community discussions can provide insights into the practical applications and experiences of others using AnythingLLM for RAG implementations. For instance, users have shared their preferences and setups:
+
+> "I still use AnythingLLM for a specific use-case because a) I know its infrastructure better and b) a big fan of the creator. Used to use LM Studio as my back-end. Still love it, but it’s too resource intensive for my taste."
+
+*Source: [Reddit Discussion on Best RAG Tools](https://www.reddit.com/r/LocalLLaMA/comments/1gszmof/best_for_rag_olama_lm_studio_anythingllm_openwebui/)*
+
+### 4. Comprehensive Tutorials and Guides
+
+For a step-by-step visual guide on implementing a RAG system locally using LM Studio and AnythingLLM, consider the following resource:
+
+- **Video Tutorial**: [How to Implement RAG locally using LM Studio and AnythingLLM](https://www.youtube.com/watch?v=i6nPw7tArvo)
+
+### 5. White Papers on RAG Systems
+
+To deepen your understanding of RAG systems and their integration with LLMs, the following white papers offer valuable insights:
+
+- **Modular RAG: Transforming RAG Systems into LEGO-like Reconfigurable Frameworks**: This paper examines the limitations of existing RAG paradigms and introduces a modular framework for enhanced reconfigurability.
+
+  *Source: [Modular RAG White Paper](https://arxiv.org/abs/2407.21059)*
+
+- **A Survey on RAG Meeting LLMs: Towards Retrieval-Augmented Large Language Models**: This survey comprehensively reviews existing research on RA-LLMs, covering architectures, training strategies, and applications.
+
+  *Source: [RAG and LLMs Survey](https://arxiv.org/abs/2405.06211)*
+
+#### [Table of Contents](#0-table-of-contents)
+
+---
+
+
 ##### [Table of Contents](#0-table-of-contents)
 
 <a id="100-appendix"></a>
