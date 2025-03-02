@@ -50,6 +50,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 1. **[Introduction to Function Calling and RAG](#36-function-calling)**: Understand the concept of function calling and its applications in LLMs.
 2. **[Function Calling in LLMs: A Technical Overview](#37-function-calling-llms)**: Learn about the technical aspects of function calling in LLMs.
 3. **[Retrieval-Augmented Generation (RAG) and Vector Databases: A Technical Overview](#38-rag-vector-databases)**: Explore vector databases and embedding models in LLMs.
+4. **[Installing and Configuring AnythingLLM for Local AI Applications](#39-installing-local-server)**: Enabling the development of AI applications with local language models
 
 
 **[Appendix](#100-appendix)**: Additional resources and references.
@@ -5368,6 +5369,216 @@ print(results)
 ##### [Table of Contents](#0-table-of-contents)
 
 ---
+
+<a id="39-installing-local-server"></a>
+# Installing and Configuring AnythingLLM for Local AI Applications
+
+#### **Introduction**
+In this section, we will install and configure **AnythingLLM**, which enables the development of AI applications with **local language models**, **function calling**, and **retrieval-augmented generation (RAG)** capabilities. 
+
+By the end of this section, you will have:
+- Installed **AnythingLLM** and set up a **local server**.
+- Connected the local server with **LM Studio**.
+- Enabled **vector search**, **embedding models**, and **function calling** for enhanced AI responses.
+- Configured the system to **run AI models locally with full privacy**.
+
+---
+
+### **1. Installing AnythingLLM**
+To get started, visit the **AnythingLLM** repository on GitHub or the official website.
+
+- **GitHub Repository:** [https://github.com/Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm)
+- **Official Download Page:** [https://useanything.com/download](https://useanything.com/download)
+
+#### **Choose the Correct Version for Your OS**
+- **Mac (Apple Silicon M1/M2/M3)** → [Download Mac ARM Version](https://useanything.com/download-mac-arm)
+- **Mac (Intel-based)** → [Download Mac x86 Version](https://useanything.com/download-mac-intel)
+- **Windows (64-bit)** → [Download Windows Version](https://useanything.com/download-windows)
+- **Linux** → [Download Linux Version](https://useanything.com/download-linux)
+
+Once downloaded, run the installation file and follow the setup process.
+
+---
+
+### **2. Setting Up the Local Server**
+After installing **AnythingLLM**, launch the application and click **"Get Started."** You will be taken to an interface that allows you to:
+- Select from **multiple AI models** (OpenAI, Anthropic, Gemini, Hugging Face, Llama, Mistral).
+- Configure the **local server**.
+- Enable **vector search** and **function calling**.
+
+For full local AI processing, we need to integrate **LM Studio** or **Ollama**.
+
+---
+
+### **3. Installing and Configuring LM Studio**
+LM Studio is a key component for running models locally with **high-performance inference**.
+
+- **Download LM Studio:** [https://lmstudio.ai](https://lmstudio.ai)
+- **Install LM Studio** and launch the application.
+
+#### **Selecting and Running a Model in LM Studio**
+1. Open **LM Studio** and go to **Search Models**.
+2. Select a model, such as:
+   - **Llama 3 (8B, 70B)**
+   - **Mistral (7B, 8x7B)**
+   - **Dolphin Llama 3 (Q6)**
+3. Click **Download Model**.
+4. Once downloaded, go to **AI Chat** and select your model.
+5. Click **Local Server** and configure:
+   - **Port:** `1234`
+   - **Enable Cross-Origin Resource Sharing (CORS)**
+   - **Logging:** Enabled
+6. Click **Start Server**.
+
+---
+
+### **4. Connecting AnythingLLM with LM Studio**
+Once the local server is running in **LM Studio**, we need to connect it to **AnythingLLM**.
+
+1. Copy the local server URL from LM Studio:
+   ```
+   http://localhost:1234/v1
+   ```
+2. Open **AnythingLLM** and go to **Settings**.
+3. Under **Base URL**, paste the copied address.
+4. Select **LLM Model** → Choose the model from the dropdown.
+5. Set **Token Context Window** (e.g., `4096` or `8192`).
+6. Click **Save Settings**.
+
+Now, **AnythingLLM** will send queries to **LM Studio**, allowing local AI processing.
+
+---
+
+### **5. Configuring Vector Search and Embeddings**
+To enable **retrieval-augmented generation (RAG)**, configure the **vector search settings** in AnythingLLM.
+
+1. Open **AnythingLLM** and go to **Settings**.
+2. Under **Embedding Preferences**, select:
+   - **Default (AnythingLLM)**
+   - **Pinecone**
+   - **OpenAI**
+3. Under **Vector Database**, select:
+   - **Default (Local)**
+   - **ChromaDB**
+   - **Weaviate**
+4. Click **Save Settings**.
+
+This setup enables local **document search**, **knowledge retrieval**, and **long-term memory** for your AI.
+
+---
+
+### **6. Running Your First Query**
+Now that the system is configured, open **AnythingLLM** and run a test query.
+
+1. Open **AnythingLLM Chat**.
+2. Type:  
+   ```
+   Hello, how are you?
+   ```
+3. The AI should respond instantly.
+4. All responses and logs will be saved in **LM Studio logs**.
+
+If you check **LM Studio**, you will see real-time processing logs confirming that the request was handled locally.
+
+---
+
+### **7. Expanding Functionality**
+With **AnythingLLM**, you can extend your AI's capabilities:
+- **Upload Documents:** Enable document-based knowledge retrieval.
+- **Enable Web Browsing:** Configure APIs for live internet access.
+- **Integrate Function Calling:** Add tools such as:
+  - **Python for computations**
+  - **Image generation (Stable Diffusion)**
+  - **Text-to-speech APIs**
+
+This setup ensures **maximum privacy** while leveraging **powerful local AI models**.
+
+---
+
+### **Conclusion**
+In this section, we have:
+- Installed **AnythingLLM**.
+- Configured **LM Studio** as a local AI server.
+- Connected **AnythingLLM** to LM Studio for private AI processing.
+- Enabled **vector search** and **embedding models**.
+- Tested the setup with an initial query.
+
+This local AI stack is now ready for **custom chatbot development**, **document search**, and **autonomous AI agents**. See you in the next section, where we will explore **advanced RAG applications**.
+
+---
+
+### **Additional Information**  
+
+#### **1. Alternative Vector Database Options**  
+While AnythingLLM provides a default **local vector store**, users may opt for **advanced vector databases** for improved search and retrieval performance. Common alternatives include:  
+- **Pinecone**: [https://www.pinecone.io/](https://www.pinecone.io/)  
+- **Weaviate**: [https://weaviate.io/](https://weaviate.io/)  
+- **FAISS** (Facebook AI Similarity Search): [https://github.com/facebookresearch/faiss](https://github.com/facebookresearch/faiss)  
+- **ChromaDB**: [https://www.trychroma.com/](https://www.trychroma.com/)  
+
+For seamless integration, follow the API documentation for these databases and configure them in the **AnythingLLM settings** under **Vector Database**.
+
+---
+
+#### **2. Enhancing Function Calling with External APIs**  
+To extend the AI agent’s capabilities beyond **local execution**, consider integrating external APIs for enhanced functionality:  
+- **Google Search API**: Enables live web search. [Google API Docs](https://developers.google.com/custom-search/v1/overview)  
+- **Wolfram Alpha API**: Provides computational knowledge. [Wolfram API](https://products.wolframalpha.com/api/)  
+- **Stable Diffusion API**: Image generation capabilities. [Stable Diffusion](https://stablediffusionweb.com/)  
+- **OpenAI API (Optional)**: For comparison with local models. [OpenAI API](https://openai.com/blog/openai-api/)  
+
+By configuring **function calling** in **AnythingLLM**, these APIs can be **dynamically queried** to provide real-time responses.
+
+---
+
+#### **3. Alternative Local AI Model Management - Ollama**  
+If you prefer an alternative to **LM Studio**, you can use **Ollama** to serve local models.  
+- **Download Ollama**: [https://ollama.ai/](https://ollama.ai/)  
+- **Pull a Model via Terminal**:  
+  ```bash
+  ollama pull mistral  
+  ```
+- **Run a Local Model**:  
+  ```bash
+  ollama run mistral  
+  ```
+
+To connect **Ollama** with **AnythingLLM**, replace the **LM Studio server URL** in the **Base URL settings** with Ollama’s API endpoint:  
+```
+http://localhost:11434/api/generate  
+```
+This allows **AnythingLLM** to interface directly with **Ollama’s local models**.
+
+---
+
+#### **4. Running AnythingLLM as a Background Service**  
+For persistent access, you can **run AnythingLLM as a background process**:  
+- **Windows**: Run the following command to keep it active:  
+  ```powershell
+  Start-Process -NoNewWindow -FilePath "C:\Path\To\AnythingLLM.exe"  
+  ```
+- **Mac/Linux**: Use `nohup` to keep the process running:  
+  ```bash
+  nohup ./anything-llm &  
+  ```
+
+For automatic startup on boot, consider **adding it as a system service**.
+
+---
+
+#### **5. White Papers and Research Papers on Local AI Processing**  
+For deeper insights, the following **white papers** provide foundational knowledge on **local LLMs, RAG, and function calling**:  
+- **Retrieval-Augmented Generation (RAG) - Meta AI**:  
+  [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)  
+- **Function Calling in LLMs - OpenAI**:  
+  [https://platform.openai.com/docs/guides/function-calling](https://platform.openai.com/docs/guides/function-calling)  
+- **FAISS: Efficient Similarity Search**:  
+  [https://arxiv.org/abs/1702.08734](https://arxiv.org/abs/1702.08734)  
+- **Vector Embeddings for LLMs - Google Research**:  
+  [https://arxiv.org/abs/2104.12254](https://arxiv.org/abs/2104.12254)  
+
+
+##### [Table of Contents](#0-table-of-contents)
 
 
 
