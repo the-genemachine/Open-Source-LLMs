@@ -55,6 +55,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 6. **[ Enhancing AI Capabilities with API Integration](#41-api-integration)**: Explore how to enhance AI capabilities through API integration.
 7. **[Advanced Function Calling in AnythingLLM](#42-advanced-function-calling)**: Learn about advanced function calling techniques in AnythingLLM.
 8. **[Enhancing AnythingLLM with API Integrations and Advanced Configurations](#43-advanced-configuration)**: Explore how to enhance AnythingLLM with API integrations and advanced configurations.
+9. **[Installing and Configuring Ollama for Local AI Applications](#44-Ollama-setup)**: Learn how to install and configure Ollama for local AI applications.
 
 
 **[Appendix](#100-appendix)**: Additional resources and references.
@@ -112,7 +113,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 - **Anything LLM**:
   - Installation and setup for **Anything LLM**.
   - Adding features like **Text-to-Speech**, **Internet Search**, and **External APIs**.
-  - Exploring **Olama** for advanced tasks.
+  - Exploring **Ollama** for advanced tasks.
 
 ### Data Preparation for LLMs
 
@@ -4937,14 +4938,14 @@ To enable local model execution, we will:
 - Install and configure **LM Studio** as a local inference server.
 - Connect **Anything LLM** with **LM Studio** to create a fully functional AI pipeline.
 
-### Step 3: Implement Function Calling with Olama
+### Step 3: Implement Function Calling with Ollama
 
-Later, we will integrate **Olama**, which provides local function execution capabilities. This involves:
-- Installing **Olama**.
-- Pulling models from Olama via the **terminal**.
+Later, we will integrate **Ollama**, which provides local function execution capabilities. This involves:
+- Installing **Ollama**.
+- Pulling models from Ollama via the **terminal**.
 - Setting up a **local API server** for function execution.
 
-Olama is an important tool for function calling, and understanding how to configure it will be crucial for extending our system’s capabilities.
+Ollama is an important tool for function calling, and understanding how to configure it will be crucial for extending our system’s capabilities.
 
 ## Building a Local RAG Agent
 
@@ -5755,7 +5756,7 @@ Engaging with community discussions can provide insights into the practical appl
 
 > "I still use AnythingLLM for a specific use-case because a) I know its infrastructure better and b) a big fan of the creator. Used to use LM Studio as my back-end. Still love it, but it’s too resource intensive for my taste."
 
-*Source: [Reddit Discussion on Best RAG Tools](https://www.reddit.com/r/LocalLLaMA/comments/1gszmof/best_for_rag_olama_lm_studio_anythingllm_openwebui/)*
+*Source: [Reddit Discussion on Best RAG Tools](https://www.reddit.com/r/LocalLLaMA/comments/1gszmof/best_for_rag_Ollama_lm_studio_anythingllm_openwebui/)*
 
 ### 4. Comprehensive Tutorials and Guides
 
@@ -6405,6 +6406,242 @@ A **vector database** allows AI to **store and retrieve text-based knowledge** i
 #### [Table of Contents](#0-table-of-contents)
 
 ---
+
+<a id="44-Ollama-setup"></a>
+# Installing and Configuring Ollama for Local AI Applications
+
+## **Overview**
+This guide walks through:
+- Downloading and installing **Ollama**
+- Setting up **local language models (LLMs)**
+- Running a **local inference server**
+- **Connecting Ollama with AnythingLLM**
+- **Switching between models dynamically**
+- **Using Ollama for AI Agent Development**
+
+By following this guide, **Ollama will run locally**, allowing **private, fast, and customizable AI interactions**.
+
+---
+
+## **Step 1: Download and Install Ollama**
+### **Downloading Ollama**
+1. **Go to the official Ollama website**  
+   - Search **Ollama** on Google or visit: [Ollama Official Site](https://Ollama.ai)  
+2. **Click on "Download"**  
+3. **Choose your operating system:**
+   - **Windows** (`.exe` installer)
+   - **Mac (M1/M2/M3)** (`.dmg` installer)
+   - **Linux** (`.deb` or `.tar.gz` package)  
+4. **Run the installer** and follow the setup instructions.  
+
+### **Verifying Installation**
+After installation, **Ollama does not create a shortcut**.  
+To start it, open the **Terminal** or **Command Prompt**.
+
+---
+
+## **Step 2: Launch Ollama Using the Terminal**
+### **Opening the Terminal**
+1. **Windows:** Press `Win + R`, type `cmd`, and hit `Enter`.  
+2. **Mac/Linux:** Open **Terminal** from Applications.  
+
+### **Starting Ollama**
+Type:
+```
+Ollama --version
+```
+If installed correctly, it will display the **Ollama version**.
+
+---
+
+## **Step 3: Download a Local LLM in Ollama**
+### **Selecting a Model**
+Ollama supports multiple models:
+- **Llama 3**
+- **Mistral**
+- **Dolphin (uncensored)**
+- **Phi-3 Mini**
+- **DeepSeek**
+- **CodeLlama**
+
+To browse models:
+```
+Ollama list
+```
+
+### **Downloading a Model**
+For example, to download **Llama 3 (8B, Q5)**:
+```
+Ollama run llama3-8b-instruct-q5
+```
+- **Downloading may take 10-20 minutes**.
+- **Q5 quantization** is recommended for **balanced performance**.
+- **Q8 quantization** is more accurate but **uses more RAM**.
+
+### **Testing the Model**
+Once downloaded, test with:
+```
+Ollama chat llama3-8b-instruct-q5
+```
+Then type:
+```
+Hello, how are you?
+```
+Ollama should respond instantly.
+
+---
+
+## **Step 4: Running Ollama as a Local Server**
+### **Why Run a Server?**
+- Allows **external applications** like **AnythingLLM** to **connect**.
+- Enables **function calling** and **multi-agent workflows**.
+
+### **Starting a Local Server**
+```
+Ollama serve
+```
+It will output:
+```
+Ollama Server running on http://127.0.0.1:11434
+```
+This is the **API endpoint**.
+
+### **Verifying the Server**
+Open a **web browser** and enter:
+```
+http://127.0.0.1:11434
+```
+If **Ollama is running**, you’ll see:
+```
+Ollama API Ready
+```
+
+---
+
+## **Step 5: Connecting Ollama with AnythingLLM**
+### **Updating AnythingLLM Settings**
+1. **Open AnythingLLM**.
+2. **Go to "Settings"** → **"Agent Configurations"**.
+3. **Select "LLM Preference"** → **Choose "Ollama"**.
+4. **Enter the Local Server URL**:
+   ```
+   http://127.0.0.1:11434
+   ```
+5. **Save Changes**.
+
+### **Testing the Connection**
+1. **Go to AnythingLLM Chat Interface**.
+2. **Type a query (e.g., "Explain quantum computing")**.
+3. Ollama should process the request **locally**.
+
+---
+
+## **Step 6: Switching Between LLMs in Ollama**
+### **Listing Installed Models**
+```
+Ollama list
+```
+Example output:
+```
+llama3-8b-instruct-q5
+mistral-7b-instruct
+deepseek-coder-7b
+```
+
+### **Running a Different Model**
+To switch from **Llama 3** to **Mistral 7B**:
+```
+Ollama run mistral-7b-instruct
+```
+
+### **Using Multiple Models**
+To use **different models simultaneously**:
+1. **Start multiple servers** on **different ports**:
+   ```
+   Ollama serve --model llama3-8b-instruct-q5 --port 11434
+   Ollama serve --model mistral-7b-instruct --port 11435
+   ```
+2. **Connect them separately in AnythingLLM**.
+
+---
+
+## **Step 7: Enabling Function Calling in AnythingLLM**
+### **Why Function Calling?**
+- Allows **AI to perform calculations, retrieve live data, and automate tasks**.
+- Supports **web search, document summarization, and API requests**.
+
+### **Configuring Function Calling**
+1. **Go to "Agent Configurations"**.
+2. **Select "Configure Agent Skills"**.
+3. **Enable:**
+   - `Web Search`
+   - `Document Summarization`
+   - `Generate Charts`
+   - `SQL Database Access` (if needed)
+
+### **Testing Function Calling**
+To test **web search**:
+```
+@agent What is the current price of Bitcoin?
+```
+Ollama will **search the web and return live data**.
+
+---
+
+## **Step 8: Using Ollama with RAG Applications**
+### **Enhancing RAG with Custom Models**
+- **Ollama supports RAG pipelines** for **document-based AI responses**.
+- **Combining AnythingLLM + Ollama** allows **private AI document search**.
+
+### **Example: Uploading a PDF for AI Search**
+1. **Go to AnythingLLM → "Upload Document"**.
+2. **Add a research paper or business report**.
+3. **Enable RAG-based document search**.
+4. **Ask AI about the document contents**.
+
+---
+
+## **Key Takeaways**
+- **Ollama provides a fully local AI environment**, ensuring **privacy**.
+- **Supports multiple LLMs**, including **Llama 3, Mistral, Dolphin, and Phi-3 Mini**.
+- **Runs a local inference server**, allowing **external applications to connect**.
+- **Integrates with AnythingLLM**, enabling **RAG-based AI search and function calling**.
+- **Supports model switching** for **dynamic AI workflows**.
+
+---
+
+## **Next Steps**
+- **Optimize RAG applications** by **fine-tuning chunk size and overlap**.
+- **Deploy Ollama as an AI agent** to **automate document retrieval**.
+- **Implement API calls** for **external data integration**.
+
+---
+
+## Additional Information
+
+### **Related Concepts**
+- **Retrieval-Augmented Generation (RAG) for AI Applications**  
+- **Fine-Tuning Large Language Models (LLMs) for Private AI**  
+- **Function Calling and Multi-Agent AI Systems**  
+
+### **White Papers & References**
+1. **Llama 3: Meta AI Research** ([Meta AI](https://ai.meta.com/research/))  
+2. **Mistral 7B Technical Overview** ([Mistral AI](https://mistral.ai/research/))  
+3. **Retrieval-Augmented Generation (RAG) in LLMs** ([NVIDIA Research](https://developer.nvidia.com/ai-literature))  
+4. **LangChain for AI Assistants** ([LangChain Docs](https://python.langchain.com/))  
+
+---
+
+## **Sources**
+- [Ollama Official Site](https://Ollama.ai)  
+- [AnythingLLM GitHub](https://github.com/Mintplex-Labs/anything-llm)  
+- [Meta AI Llama Models](https://ai.meta.com/resources/models-and-libraries/llama/)  
+- [Hugging Face LLM Models](https://huggingface.co/models)  
+
+#### [Table of Contents](#0-table-of-contents)
+
+---
+
 
 #### [Table of Contents](#0-table-of-contents)
 
