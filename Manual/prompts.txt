@@ -47,8 +47,8 @@ Refine this transcript using Task-Based Style:
 
 Udemy prompts :
 
-Refine this transcript in a technical manner using Github styling. Do not use icons.
+Refine this transcript in a technical manner using Github styling. Do not use icons. Only use a code window when I ask for it :
 
-If there is anything missing from < Topic > that may have been overlooked, please add it under the heading "Additional Information." List links to applicable sources if possible. Provide links to white papers if possible. Supply a single git commit message for this topic. List the sources separately at the bottom of your response.
+If there is anything missing from < Topic > that may have been overlooked, please add it under the heading "Additional Information." List links to applicable sources if possible. Provide links separately at the end of your response. Add links to white papers if possible. Supply a single git commit message for this topic. List the sources separately at the bottom of your response.
 
 

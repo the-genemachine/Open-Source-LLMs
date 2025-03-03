@@ -53,6 +53,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 4. **[Installing and Configuring AnythingLLM for Local AI Applications](#39-installing-local-server)**: Enabling the development of AI applications with local language models
 5. **[Building a Local RAG Application with AnythingLLM](#40-building-local-rag)**: Learn how to build a local RAG application using AnythingLLM.
 6. **[ Enhancing AI Capabilities with API Integration](#41-api-integration)**: Explore how to enhance AI capabilities through API integration.
+7. **[Advanced Function Calling in AnythingLLM](#42-advanced-function-calling)**: Learn about advanced function calling techniques in AnythingLLM.
 
 
 **[Appendix](#100-appendix)**: Additional resources and references.
@@ -6041,8 +6042,182 @@ Beyond web search, **AnythingLLM** supports:
 
 ---
 
+<a id="42-advanced-function-calling"></a>
+# Advanced Function Calling in AnythingLLM: Summarization, Charting, and SQL Integration
+
+## **Overview**  
+This section explores advanced **function calling capabilities** in **AnythingLLM**, including:
+- **Document summarization** vs. **Retrieval-Augmented Generation (RAG)**
+- **Chart generation using Python libraries**
+- **File saving and browser downloads**
+- **SQL database connectivity for structured data access**  
+
+Each of these skills extends the capabilities of a **local LLM assistant**, allowing it to perform more complex and useful operations in a **privacy-first, locally hosted** environment.
+
+---
+
+## **Summarization vs. RAG: Key Differences**  
+### **Retrieval-Augmented Generation (RAG)**
+- **Retrieves specific data** from a **vector database**.
+- **Searches** based on **keyword queries**.
+- Works well for **fact-based lookups**.
+
+### **Summarization**
+- **Processes the entire document** rather than querying specific vectors.
+- **Condenses** large content into a **digestible format**.
+- Ideal for **reports, research papers, or legal documents**.
+
+---
+
+## **Step 1: Enabling Document Summarization**  
+### **Configuring Agent Skills**
+1. **Go to Agent Configurations**
+2. Click **Configure Agent Skills**
+3. Ensure **"View and Summarize Documents"** is **enabled**.
+
+### **Summarizing a PDF in AnythingLLM**
+1. **Upload the Document**
+   - Click **Upload Document**  
+   - Move the document to a workspace  
+   - Click **Save and Embed** to store it in the **vector database**.
+
+2. **Invoke the Summarization Agent**
+   - Start a **new thread**  
+   - Enter the command:
+     ```
+     @agent Please summarize the doggo.pdf
+     ```
+   - The agent will extract **key takeaways** from the document.
+
+### **Example Summarization Output**
+```
+Agent is attempting to call document summarize tool...
+Summary of doggo.pdf:
+- The document discusses different dog training methods.
+- Emphasizes the importance of building a strong bond.
+- Outlines structured training methodologies.
+- Key categories: obedience training, positive reinforcement, and balanced training.
+```
+Now, the **LLM has an internalized summary** in its **context window**, making follow-up queries more efficient.
+
+---
+
+## **Step 2: Saving Information for Long-Term Memory**  
+### **Persisting Knowledge in Memory**
+Once summarized, you can instruct the **LLM to retain the summary**:
+```
+@agent Thank you. Please remember this information and save it in memory.
+```
+- The assistant will **store** this data in its **short-term context**.
+- Can be referenced in future conversations without re-uploading the document.
+
+---
+
+## **Step 3: Generating Charts with Function Calling**  
+### **Enabling Chart Generation**
+1. **Go to Agent Configurations**  
+2. Click **Configure Agent Skills**  
+3. Enable **Generate Charts**  
+
+### **Creating a Chart Using Python Libraries**
+1. Start a **new thread**  
+2. Enter the command:
+   ```
+   @agent Create a chart of my investments.
+   I have 50% in stocks, 20% in bonds, 10% in Bitcoin, and 20% in cash.
+   ```
+3. The AI agent will **call a Python library**, generate a **data visualization**, and return a downloadable chart.
+
+### **Example Output**
+```
+Agent is attempting to call Create Chart Tool...
+Investment Portfolio:
+- Stocks: 50%
+- Bonds: 20%
+- Bitcoin: 10%
+- Cash: 20%
+
+Chart Generated.
+```
+4. The chart **can be downloaded** directly to your local machine.
+
+---
+
+## **Step 4: Saving Files to Local Storage**  
+### **Enabling File Saving**
+1. **Go to Agent Configurations**  
+2. Enable **Generate and Save Files to Browser**  
+
+### **Saving a Chart or Report**
+1. **Create a chart** (as shown in Step 3).  
+2. **Save it locally** with:
+   ```
+   @agent Save this chart as a text file.
+   ```
+3. The file will be **downloadable** for further use.
+
+---
+
+## **Step 5: Connecting to an SQL Database**  
+### **Enabling SQL Integration**
+1. **Go to Agent Configurations**  
+2. Enable **SQL Connector**  
+
+### **Integrating with an SQL Database**
+- Allows **AnythingLLM** to **query structured datasets**.
+- Useful for **business analytics, finance, and CRM data management**.
+
+### **Example SQL Query**
+```
+@agent Fetch all customer transactions above $1,000 from my sales database.
+```
+- The LLM will **query the connected SQL database** and return the **structured result**.
+
+---
+
+## **Key Takeaways**
+- **RAG vs Summarization:** RAG retrieves **specific** data; Summarization **condenses** entire documents.  
+- **Chart Generation:** Uses Python libraries for **data visualization**.  
+- **File Handling:** Allows users to **save reports, charts, and summaries** locally.  
+- **SQL Connectivity:** Enables interaction with **relational databases** for structured queries.  
+
+---
+
+## **Next Steps**
+- Expand function calling to **custom APIs** (Google, OpenAI, etc.).  
+- Implement **multi-agent workflows** for automation.  
+- Explore **voice-enabled AI assistants** with **text-to-speech models**.  
+
+---
+
+## **Additional Information**  
+
+### **Related Concepts**  
+- **Retrieval-Augmented Generation (RAG) in AI**  
+- **Using Python libraries for AI-driven data visualization**  
+- **Privacy considerations in local AI deployments**  
+
+### **White Papers & References**  
+1. **Retrieval-Augmented Generation for Large Language Models** ([NVIDIA Research](https://developer.nvidia.com/ai-literature))  
+2. **LangChain Documentation for AI Agents** ([LangChain Docs](https://python.langchain.com/))  
+3. **SQL Query Optimization for AI Assistants** ([ACM Digital Library](https://dl.acm.org/))  
+4. **Vector Databases for LLMs** ([Pinecone](https://www.pinecone.io/))  
+
+---
+
+## **Sources**  
+- [AnythingLLM GitHub](https://github.com/Mintplex-Labs/anything-llm)  
+- [SerpAPI Documentation](https://serpapi.com/)  
+- [Hugging Face LLM Studio](https://huggingface.co/docs)  
+- [LangChain AI Agents](https://python.langchain.com/en/latest/)  
+
+
 ##### [Table of Contents](#0-table-of-contents)
 
+
+---
+
+#### [Table of Contents](#0-table-of-contents)
 
 <a id="100-appendix"></a>
 # Appendix
