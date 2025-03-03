@@ -4912,7 +4912,7 @@ The previous discussion on Groq's Language Processing Unit (LPU) highlighted its
 ---
 
 <a id="36-function-calling"></a>
-# Introduction to Function Calling and RAG Applications
+# 1. Introduction to Function Calling and RAG Applications
 
 ## Overview
 
@@ -5019,7 +5019,7 @@ Andrew Karpathy has provided a strong conceptual foundation on this topic, and h
 
 ---
 <a id="37-function-calling-llms"></a>
-# **Function Calling in LLMs: A Technical Overview**
+# 2. Function Calling in LLMs: A Technical Overview
 
 #### **Introduction**
 Function calling is a fundamental capability that extends the functionality of Large Language Models (LLMs) by allowing them to interact with external systems. Essentially, an LLM can be thought of as an **operating system** that processes text efficiently but is inherently limited in performing specialized tasks, such as mathematical computations, image generation, or interacting with APIs.
@@ -5162,7 +5162,7 @@ In the next chapter , we will explore **Retrieval-Augmented Generation (RAG)** a
 ---
 
 <a id="38-rag-vector-databases"></a>
-# **Retrieval-Augmented Generation (RAG) and Vector Databases: A Technical Overview**
+# 3. Retrieval-Augmented Generation (RAG) and Vector Databases: A Technical Overview
 
 #### **Introduction to Knowledge Augmentation in LLMs**
 To enhance the knowledge capabilities of **large language models (LLMs)**, we primarily use two methodologies:  
@@ -5376,7 +5376,7 @@ print(results)
 ---
 
 <a id="39-installing-local-server"></a>
-# Installing and Configuring AnythingLLM for Local AI Applications
+# 4. Installing and Configuring AnythingLLM for Local AI Applications
 
 #### **Introduction**
 In this section, we will install and configure **AnythingLLM**, which enables the development of AI applications with **local language models**, **function calling**, and **retrieval-augmented generation (RAG)** capabilities. 
@@ -5588,7 +5588,7 @@ For deeper insights, the following **white papers** provide foundational knowled
 ---
 
 <a id="40-building-local-rag"></a>
-# Building a Local RAG Application with AnythingLLM
+# 5. Building a Local RAG Application with AnythingLLM
 
 #### **Overview**  
 In this section, we will build our first **Retrieval-Augmented Generation (RAG) application** using **AnythingLLM**. This application will allow **local document retrieval and querying** while maintaining **maximum privacy**.  
@@ -5780,7 +5780,7 @@ To deepen your understanding of RAG systems and their integration with LLMs, the
 
 ---
 <a id="41-api-integration"></a>
-# Function Calling in AnythingLLM: Enabling Web Search and API Integrations  
+# 6. Function Calling in AnythingLLM: Enabling Web Search and API Integrations  
 
 ## Overview  
 
@@ -6045,7 +6045,7 @@ Beyond web search, **AnythingLLM** supports:
 ---
 
 <a id="42-advanced-function-calling"></a>
-# Advanced Function Calling in AnythingLLM: Summarization, Charting, and SQL Integration
+# 7. Advanced Function Calling in AnythingLLM: Summarization, Charting, and SQL Integration
 
 ## **Overview**  
 This section explores advanced **function calling capabilities** in **AnythingLLM**, including:
@@ -6219,7 +6219,7 @@ Chart Generated.
 ---
 
 <a id="43-advanced-configuration"></a>
-# Enhancing AnythingLLM with API Integrations and Advanced Configurations
+# 8. Enhancing AnythingLLM with API Integrations and Advanced Configurations
 
 ## **Overview**
 In this section, we explore **advanced capabilities** of **AnythingLLM**, including:
@@ -6408,7 +6408,7 @@ A **vector database** allows AI to **store and retrieve text-based knowledge** i
 ---
 
 <a id="44-Ollama-setup"></a>
-# Installing and Configuring Ollama for Local AI Applications
+# 9. Installing and Configuring Ollama for Local AI Applications
 
 ## **Overview**
 This guide walks through:
@@ -6641,6 +6641,9 @@ Ollama will **search the web and return live data**.
 #### [Table of Contents](#0-table-of-contents)
 
 ---
+
+# Optimizing RAG Applications
+
 
 
 #### [Table of Contents](#0-table-of-contents)
