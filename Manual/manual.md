@@ -6884,22 +6884,22 @@ Most modern LLM implementations allow for configuring chunking settings. Users c
 3. [LangChain Text Processing](https://python.langchain.com/)
 4. [Haystack NLP Framework](https://haystack.deepset.ai/)
 
-## **Appendix**
+## **Appendix Entries**
 
-### **Appendix A: Sample Chunking Code**
-A Python example demonstrating text chunking with overlapping segments.
+1. ### Sample Chunking Code
+   A Python example demonstrating text chunking with overlapping segments.
 
-### **Appendix B: Vector Database Configuration**
-Best practices for optimizing chunked text embeddings in popular vector databases like Pinecone and FAISS.
+2. ### Vector Database Configuration
+   Best practices for optimizing chunked text embeddings in popular vector databases like Pinecone and FAISS.
 
-### **Appendix C: Case Study – Chunk Optimization for Legal Documents**
-Analyzing how chunking improves retrieval performance for complex legal texts.
+3. ### Case Study – Chunk Optimization for Legal Documents
+   Analyzing how chunking improves retrieval performance for complex legal texts.
 
-### **Appendix D: Impact of Chunk Size on LLM Performance**
-Comparison of different chunk sizes and overlaps on response accuracy.
+4. ### Impact of Chunk Size on LLM Performance
+   Comparison of different chunk sizes and overlaps on response accuracy.
 
-### **Appendix E: Handling Multi-Modal Data**
-Strategies for chunking PDFs containing images, tables, and metadata.
+5. ### Handling Multi-Modal Data
+   Strategies for chunking PDFs containing images, tables, and metadata.
 
 
 #### [Table of Contents](#0-table-of-contents)
