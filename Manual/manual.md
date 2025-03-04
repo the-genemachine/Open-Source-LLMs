@@ -61,6 +61,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 
 1. **[Fire Crawl: A Solution for Structuring Website Data for RAG Applications](#45-optimizing-rag)**: Learn how to optimize RAG applications for better performance.
 2. **[LlamaParse: Transforming Unstructured Documents into Markdown for LLM Training](#46-llama-bars)**: Understand how to transform unstructured documents into Markdown for LLM training.
+3. **[Optimizing Chunk Size and Chunk Overlap for Retrieval-Augmented Generation (RAG) Applications](#47-chunks)**: Learn how to optimize chunk size and chunk overlap for RAG applications.
 
 **[Appendix](#100-appendix)**: Additional resources and references.
 
@@ -6806,6 +6807,99 @@ For lengthy documents, summaries can be generated to optimize storage and retrie
 2. [Llama Cloud API](https://cloud.llamaindex.ai/)
 3. [Google Colab Guide](https://colab.research.google.com/)
 4. [Markdown Formatting Guide](https://www.markdownguide.org/)
+
+
+#### [Table of Contents](#0-table-of-contents)
+
+---
+
+<a id="47-chunks"></a>
+# 3. Optimizing Chunk Size and Chunk Overlap for Retrieval-Augmented Generation (RAG) Applications
+
+## **Introduction**
+
+Chunk size and chunk overlap are two essential concepts in optimizing data retrieval for Retrieval-Augmented Generation (RAG) applications. Properly managing these parameters ensures efficient querying and retrieval of relevant information, ultimately improving the performance of large language models (LLMs). This document explores best practices for chunking text data and fine-tuning chunk overlap to maximize search accuracy.
+
+## **Understanding Chunk Size**
+
+Chunk size refers to the number of tokens in each segment of text before it is embedded into a vector database. When processing large documents, selecting an appropriate chunk size is crucial to maintaining accurate and relevant results.
+
+### **Challenges of Large Documents**
+- When entire documents are uploaded into a vector database, the model retrieves the beginning and end sections clearly but often struggles with content in the middle.
+- Proper chunking ensures that all parts of the document remain accessible and well-structured for retrieval.
+
+### **Recommended Chunk Sizes**
+- **Long-form content (e.g., books, reports)**: 1000–5000 tokens
+- **Short stories or documents**: 500–1000 tokens
+- **Lists, structured data (e.g., product catalogs, FAQs)**: 100–500 tokens
+
+## **Understanding Chunk Overlap**
+
+Chunk overlap ensures that adjacent chunks share some content, improving continuity and maintaining context when retrieving information. This overlap helps mitigate issues where important phrases are split between two chunks, making search results more precise.
+
+### **Recommended Chunk Overlap Ratios**
+- **1–5% of chunk size**: Ideal for most applications
+- **Larger overlaps (10–50 tokens)**: Useful for longer narratives
+- **Minimal overlap (10–20 tokens)**: Sufficient for structured data like product listings
+
+## **Implementing Chunking and Overlap in LLMs**
+
+Most modern LLM implementations allow for configuring chunking settings. Users can adjust these parameters in their embedding configurations:
+
+1. **Navigate to Agent Configurations**: Locate the embedding preference settings.
+2. **Select an Embedding Model**: Choose from OpenAI models or custom embeddings.
+3. **Adjust Chunking Settings**:
+   - Default chunk size: 1000 tokens (optimal for general use)
+   - Default chunk overlap: 20 tokens (balanced for most text structures)
+4. **Customize for Specific Use Cases**:
+   - Increase chunk size for long-form text
+   - Reduce chunk size for structured data
+   - Adjust overlap based on retrieval accuracy
+
+## **Best Practices for Chunk Optimization**
+
+- **Experiment with Different Configurations**: Fine-tune chunk sizes and overlaps based on dataset structure.
+- **Optimize for LLM Context Windows**: Ensure chunk sizes align with model limitations.
+- **Use Smaller Chunks for Structured Data**: Lists, tables, and records benefit from smaller segments.
+- **Leverage Overlap for Enhanced Search Accuracy**: Higher overlap ratios improve continuity in narratives.
+
+## **Additional Information**
+
+- Consideration of **multi-modal documents** (PDFs with images, tables, and metadata)
+- Impact of **document structure** on retrieval accuracy
+- **Trade-offs between chunk size and processing efficiency**
+- **Handling special cases** such as mathematical equations and legal texts
+
+### **Alternative Tools for Text Chunking**
+- **Haystack** (deepset AI)
+- **LlamaIndex (formerly GPT Index)**
+- **LangChain Document Loaders**
+- **SpaCy-based text chunkers**
+- **NLTK text parsers**
+
+## **Sources**
+
+1. [OpenAI API Documentation](https://platform.openai.com/docs/)
+2. [LlamaIndex Documentation](https://gpt-index.readthedocs.io/)
+3. [LangChain Text Processing](https://python.langchain.com/)
+4. [Haystack NLP Framework](https://haystack.deepset.ai/)
+
+## **Appendix**
+
+### **Appendix A: Sample Chunking Code**
+A Python example demonstrating text chunking with overlapping segments.
+
+### **Appendix B: Vector Database Configuration**
+Best practices for optimizing chunked text embeddings in popular vector databases like Pinecone and FAISS.
+
+### **Appendix C: Case Study – Chunk Optimization for Legal Documents**
+Analyzing how chunking improves retrieval performance for complex legal texts.
+
+### **Appendix D: Impact of Chunk Size on LLM Performance**
+Comparison of different chunk sizes and overlaps on response accuracy.
+
+### **Appendix E: Handling Multi-Modal Data**
+Strategies for chunking PDFs containing images, tables, and metadata.
 
 
 #### [Table of Contents](#0-table-of-contents)
