@@ -69,6 +69,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 2. **[Setting Up Flowise Locally for AI Agent Development](#49-flowise-setup)**: Learn how to set up Flowise locally for AI agent development.
 3. **[Flowise Interface Overview and Features](#50-flowise-interface)**: Understand the Flowise interface and its core features.
 4. **[Building a Local Retrieval-Augmented Chatbot with Flowise and Llama 3](#51-llama3-chatbot)**: Learn how to build a local RAG chatbot using Flowise and Llama 3.
+5. **[Building Multi-Agent AI Systems with Flowise and Llama 3](#52-multi-agent)**: Explore how to build multi-agent AI systems using Flowise and Llama 3.
 
 ---
 
@@ -7328,13 +7329,128 @@ Before proceeding, ensure the following are installed and configured:
 4. **Appendix D: Security Best Practices for Local AI Models** – Guidelines for handling sensitive data in AI workflows.
 5. **Appendix E: Cloud Deployment Considerations** – Pros and cons of moving from local to cloud-hosted AI solutions.
 
+#### [Table of Contents](#0-table-of-contents)
+
+---
+
+<a id="52-multi-agent"></a>
+# 5. Building Multi-Agent AI Systems with Flowise and Llama 3
+
+## **Introduction**
+
+This document outlines the development of a **multi-agent AI system** using **Flowise** and a **locally hosted Llama 3 model**. The architecture consists of a **supervisor** AI managing multiple specialized **worker agents**, each optimized for distinct tasks such as **coding** and **documentation generation**. This design enhances efficiency, as specialized models outperform general-purpose LLMs in specific domains.
+
+## **System Architecture**
+
+### **1. AI Agent Structure**
+- **Supervisor Agent**: Oversees and delegates tasks to specialized worker agents.
+- **Worker Agents**:
+  - **Coding Agent**: Generates clean, structured code.
+  - **Documentation Agent**: Produces technical documentation based on generated code.
+- **Function Calling Capabilities**: The system employs models that support function calling for enhanced task execution.
+
+### **2. Setting Up Flowise for AI Agents**
+
+#### **Creating the AI Agent Workflow**
+1. Navigate to **Agent Flows** in Flowise.
+2. Click **Add New** to create a custom agent workflow.
+3. Insert a **Supervisor Agent**.
+4. Add at least **two Worker Agents** (e.g., **Coding Agent** and **Documentation Agent**).
+5. Connect the **Supervisor Agent** to both Worker Agents.
+6. Use **Chatbot Llama Function** for function calling capabilities.
+
+#### **Configuring the Supervisor and Workers**
+1. Set **Supervisor Agent** to delegate tasks dynamically.
+2. Define Worker Agents with specialized prompts:
+   - **Coding Agent**: Focuses on writing efficient, structured code.
+   - **Documentation Agent**: Converts code into detailed, well-formatted documentation.
+3. Connect the agents to the **Llama 3** function-calling model.
+4. Set **temperature** to `0.7` for balanced creativity and precision.
+5. Save the workflow as `Ollama AI Agent`.
+
+## **Enhancing Agent Performance**
+
+### **1. Optimizing Model Selection**
+- **Check installed models using**:
+  ```sh
+  ollama list
+  ```
+- Available models include:
+  - Llama 3 8B (Q8, Q5, Q2, Dolphin variants)
+  - Open-source fine-tuned models
+- **Choose the highest-quality model** for better performance.
+
+### **2. Using Prompt Engineering for Agent Specialization**
+1. Navigate to **Marketplace** in Flowise.
+2. Search for **Prompt Engineering Team** template.
+3. Use OpenAI models to generate structured prompts for Worker Agents.
+4. Integrate **system prompts** for each worker, ensuring optimized task delegation.
+
+### **3. API Key Configuration**
+- Obtain an **OpenAI API Key** via the OpenAI dashboard.
+- Enable **payment verification** to avoid rate-limiting issues.
+- Insert the key into Flowise’s **Credentials** section.
+
+## **Testing the AI Agents**
+
+### **1. Code Generation and Documentation Workflow**
+1. Run the AI agent in **Flowise Chat**.
+2. Provide an instruction (e.g., "Write Python code for a number-guessing game").
+3. **Supervisor Agent** delegates the task to the **Coding Agent**.
+4. **Coding Agent** generates Python code.
+5. **Supervisor Agent** triggers the **Documentation Agent**.
+6. **Documentation Agent** explains the generated code and usage instructions.
+
+### **2. Validating Code Execution**
+1. Copy the generated Python script.
+2. Run the script in **Replit** or a local IDE.
+3. Ensure correct program execution and functionality.
+
+## **Best Practices for Multi-Agent AI Systems**
+- **Use high-quality Llama models**: Lower quantized models (e.g., Q4) degrade performance.
+- **Divide tasks into specialized agents**: Improves accuracy and output quality.
+- **Monitor API costs**: Using OpenAI’s GPT models for prompt generation is cost-effective.
+- **Secure API credentials**: Store keys safely to prevent unauthorized access.
+- **Regularly update AI models**: Keep models optimized for better task performance.
+
+## **Additional Information**
+
+### **Additional Features and Considerations**
+- **Function Calling Capabilities**: Enables agents to fetch and process external data.
+- **Custom Tool Integrations**: AI agents can leverage third-party APIs for extended functionality.
+- **Scalability Options**: Cloud deployment alternatives for handling high workloads.
+- **Alternative Vector Stores**: ChromaDB or FAISS for persistent memory management.
+
+### **Alternative AI Agent Frameworks**
+1. **LangFlow** – UI-based LangChain automation tool.
+2. **Haystack (deepset.ai)** – Multi-agent document search and retrieval.
+3. **CrewAI** – Open-source agent orchestration framework.
+4. **AutoGen (Microsoft)** – Advanced multi-agent coordination framework.
+5. **BotPress** – AI-powered chatbot framework.
+
+## **Sources**
+
+1. [Flowise GitHub Repository](https://github.com/FlowiseAI/Flowise)
+2. [Ollama AI Documentation](https://ollama.ai/)
+3. [LangChain AI Agent Framework](https://python.langchain.com/)
+4. [OpenAI API Reference](https://platform.openai.com/docs/)
+5. [ChromaDB Vector Store](https://github.com/chroma-core/chroma)
+
+## **Appendix**
+
+1. **Appendix A: Flowise AI Agent Architecture** – Overview of agent workflows and interconnections.
+2. **Appendix B: Prompt Engineering Strategies** – Best practices for optimizing AI-generated responses.
+3. **Appendix C: Model Performance Comparisons** – Benchmarking different Llama 3 variants.
+4. **Appendix D: Deploying AI Agents in Production** – Guidelines for cloud-based agent deployment.
+5. **Appendix E: Function Calling and API Extensions** – Enhancing AI agents with third-party API access.
+
 
 #### [Table of Contents](#0-table-of-contents)
 
 ---
 #### [Table of Contents](#0-table-of-contents)
 <a id="100-appendix"></a>
-# Appendix
+# Appendix A , B , C , D , E
 
 An appendix in your document is a valuable space to include supplementary information, resources, or additional content that supports the main text without disrupting its flow. Here are ideas on what you can start adding to your appendix based on the context of this chat about LLMs and vision-enabled models:
 
