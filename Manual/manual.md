@@ -68,6 +68,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 1. **[AI Agents and Chatbot Frameworks: An Overview](#48-local-agents)**: Explore the concept of AI agents and their applications.
 2. **[Setting Up Flowise Locally for AI Agent Development](#49-flowise-setup)**: Learn how to set up Flowise locally for AI agent development.
 3. **[Flowise Interface Overview and Features](#50-flowise-interface)**: Understand the Flowise interface and its core features.
+4. **[Building a Local Retrieval-Augmented Chatbot with Flowise and Llama 3](#51-llama3-chatbot)**: Learn how to build a local RAG chatbot using Flowise and Llama 3.
 
 ---
 
@@ -7230,12 +7231,107 @@ The Flowise marketplace contains templates for various AI-powered functionalitie
 4. **Appendix D: Security Best Practices** – Guidelines for securing AI workflows and managing sensitive data.
 5. **Appendix E: Performance Optimization Tips** – Best practices for improving Flowise efficiency and execution speed.
 
-
 #### [Table of Contents](#0-table-of-contents)
-
 
 ---
 
+<a id="51-llama3-chatbot"></a>
+# 4. Building a Local Retrieval-Augmented Chatbot with Flowise and Llama 3
+
+## **Introduction**
+
+This document provides a detailed guide on building a Retrieval-Augmented Generation (RAG) chatbot using **Flowise** and a locally hosted **Llama 3** model. The chatbot integrates retrieval-augmented question answering (Q&A), local embeddings, document loading, and text chunking for optimized search performance. This approach ensures a completely open-source, private, and secure AI assistant.
+
+## **Prerequisites**
+
+Before proceeding, ensure the following are installed and configured:
+- **Flowise** ([GitHub Repository](https://github.com/FlowiseAI/Flowise))
+- **Ollama** ([Installation Guide](https://ollama.ai/))
+- **Node.js** ([Download](https://nodejs.org/))
+- **A locally hosted Llama 3 model**
+
+## **Key Components of the Chatbot**
+
+### **1. Setting Up Flowise with Ollama**
+- The chatbot operates with a locally running **Ollama server**.
+- Ollama must be installed and configured before connecting to Flowise.
+- The default API endpoint: `http://localhost:11434`.
+
+### **2. Creating a New Chat Flow in Flowise**
+1. Navigate to **Chat Flows** in Flowise.
+2. Click **Add New** to create a custom chatbot workflow.
+3. Select **Chat Models** → **Chatbot Llama** as the model.
+4. Set **model name** to `Llama 3`.
+5. Adjust the **temperature** (default: `0.4` for balanced responses).
+
+### **3. Integrating a Conversational Retrieval Q&A Chain**
+1. Add a **Conversational Retrieval Q&A Chain** to enable interaction.
+2. Connect it to the **Llama 3 chat model**.
+3. Insert a **Vector Store Retriever** to manage indexed data.
+4. Choose an in-memory vector store for local testing (alternative: FAISS, ChromaDB).
+
+### **4. Embedding and Indexing Documents**
+1. Add an **embedding model**: Select **Ollama Embeddings**.
+2. Connect embeddings to the **vector database**.
+3. (Optional) Configure `use_map` for optimized performance.
+
+### **5. Loading and Chunking Documents**
+1. Use **Cheerio Web Scraper** for webpage-based document retrieval.
+2. Add a **Character Text Splitter**:
+   - **Chunk Size**: `700`
+   - **Chunk Overlap**: `50`
+
+### **6. Implementing Memory for Context Retention**
+1. Default memory buffer is used, but custom stores can be integrated.
+2. Add **Simple Buffer Memory** for maintaining context across interactions.
+
+### **7. Testing and Deploying the Chatbot**
+1. Save the workflow as `Llama Local RAG Bot`.
+2. Validate responses with conversational memory.
+3. Ensure that the vector store, embeddings, and memory are properly initialized.
+4. Use the bot to fetch web-based information and verify document retrieval accuracy.
+
+## **Best Practices for Local AI Chatbots**
+- **Run AI models locally for privacy**: Avoid sending sensitive data to cloud-based APIs.
+- **Optimize embeddings and retrieval**: Ensure indexed data is efficiently stored and retrieved.
+- **Regularly update models**: Keep Llama models and dependencies updated for best performance.
+- **Use efficient chunking techniques**: Improve information retrieval by adjusting chunk overlap.
+
+## **Additional Information**
+
+### **Additional Features and Considerations**
+- **Security**: Local execution eliminates data privacy concerns.
+- **Fine-tuning models**: Llama models can be optimized with domain-specific datasets.
+- **Alternative document loaders**: Flowise supports PDF parsing, CSV ingestion, and direct text file indexing.
+- **Vector store persistence**: Long-term storage solutions (e.g., FAISS, ChromaDB) can be integrated for better scalability.
+
+### **Alternative AI Chatbot Development Tools**
+1. **LangFlow** – Alternative UI for LangChain-based applications.
+2. **Rasa** – Open-source conversational AI with local deployment support.
+3. **Haystack (deepset.ai)** – NLP-powered search and document retrieval.
+4. **AutoGen (Microsoft)** – Multi-agent AI orchestration framework.
+5. **VectorShift** – AI pipeline automation with cloud and local options.
+
+## **Sources**
+
+1. [Flowise GitHub Repository](https://github.com/FlowiseAI/Flowise)
+2. [Ollama Installation Guide](https://ollama.ai/)
+3. [LangChain Documentation](https://python.langchain.com/)
+4. [ChromaDB Documentation](https://github.com/chroma-core/chroma)
+5. [FAISS Vector Store](https://faiss.ai/)
+
+## **Appendix**
+
+1. **Appendix A: Step-by-Step Ollama Setup** – Guide on setting up and configuring a local Ollama model.
+2. **Appendix B: Flowise UI Overview** – Detailed explanation of Flowise’s interface and features.
+3. **Appendix C: Performance Benchmarking** – Measuring chatbot efficiency with different vector stores.
+4. **Appendix D: Security Best Practices for Local AI Models** – Guidelines for handling sensitive data in AI workflows.
+5. **Appendix E: Cloud Deployment Considerations** – Pros and cons of moving from local to cloud-hosted AI solutions.
+
+
+#### [Table of Contents](#0-table-of-contents)
+
+---
 #### [Table of Contents](#0-table-of-contents)
 <a id="100-appendix"></a>
 # Appendix
