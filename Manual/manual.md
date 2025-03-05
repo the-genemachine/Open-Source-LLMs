@@ -71,6 +71,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 4. **[Building a Local Retrieval-Augmented Chatbot with Flowise and Llama 3](#51-llama3-chatbot)**: Learn how to build a local RAG chatbot using Flowise and Llama 3.
 5. **[Building Multi-Agent AI Systems with Flowise and Llama 3](#52-multi-agent)**: Explore how to build multi-agent AI systems using Flowise and Llama 3.
 6. **[Building AI Agents with Function Calling in Flowise and Llama 3](#53-function-calling-flowise)**: Learn how to build AI agents with function calling in Flowise and Llama 3.
+7. **[Building and Hosting AI Agents with Flowise and Open-Source Models](#54-hosting-agents)**: Explore how to build and host AI agents using Flowise and open-source models.
 
 ---
 
@@ -7571,10 +7572,126 @@ By structuring multiple agents under a **supervisor model**, this framework auto
 4. **Appendix D: Model Selection Guide** – Comparing Llama quantization levels.
 5. **Appendix E: Scaling AI Workflows** – Strategies for cloud deployment and automation.
 
+#### [Table of Contents](#0-table-of-contents)
+
+---
+
+<a id="54-hosting-agents"></a>
+# 7. Building and Hosting AI Agents with Flowise and Open-Source Models
+
+## **Introduction**
+
+This document outlines the development of AI agents using **Flowise** with **local or cloud-hosted models**. The guide explores AI agent frameworks, function-calling capabilities, and hosting solutions. The primary focus is to assist developers in automating tasks and structuring AI workflows efficiently while considering **self-hosting** options for client-facing applications.
+
+## **Understanding AI Agent Frameworks**
+
+### **1. Structuring AI Agents**
+- **Supervisor Agent**: Manages and delegates tasks.
+- **Worker Agents**:
+  - Web Researcher: Retrieves search results from external sources.
+  - Data Analyst: Processes structured datasets (e.g., PDFs, CSVs, vector stores).
+  - Creative Writer: Generates blog content.
+  - Social Media Strategist: Converts content into tweets and social media posts.
+  - *(Optional)* Video Content Creator: Generates YouTube titles and descriptions.
+
+### **2. Implementing AI Agents in Flowise**
+1. Navigate to **Agent Flows** in Flowise.
+2. Click **Add New** to create an agent system.
+3. Insert a **Supervisor Agent** and connect Worker Agents.
+4. Configure AI models:
+   - **Llama 3 Function Calling** (for local AI processing)
+   - **OpenAI API Models** (for cloud-hosted performance optimization)
+5. Save workflow under a recognizable name (e.g., `AI Content Automation`).
+
+## **Expanding Agent Capabilities**
+
+### **1. Integrating Function Calling**
+- Select **Llama 3 Function Calling** for **local** inference.
+- Assign **API-based models** for **cloud-hosted performance**.
+- Ensure worker agents handle task delegation effectively.
+
+### **2. Tool Integration for AI Workflows**
+Flowise provides various tools to enhance AI functionalities:
+- **Brave Search API**: For real-time web search.
+- **Python Interpreter**: For executing custom Python scripts.
+- **Calculator**: For mathematical computations within an agent.
+- **Retrieval-Augmented Generation (RAG)**:
+  - Connects AI models to **vector databases** (FAISS, ChromaDB, Pinecone).
+  - Embeds structured data for better query responses.
+
+### **3. Setting Up Vector Databases for AI Agents**
+1. Add a **Retriever Tool** for AI memory and knowledge storage.
+2. Select a **Vector Store** (e.g., FAISS, ChromaDB, Pinecone, in-memory storage).
+3. Configure **Embeddings** with Llama 3 to enable semantic search.
+4. Include **Document Loaders**:
+   - Web Scraper (Cheerio)
+   - PDF Loader
+   - API Connectors
+
+## **Hosting AI Agents for External Use**
+
+### **1. Cloud Hosting Considerations**
+If the AI system needs to be accessible by external users, hosting is required:
+- **Local AI Models**: Cannot be accessed remotely.
+- **Cloud Inference via Hugging Face**: Uses **transformers for API-based access**.
+- **OpenAI API**: Provides the best performance but requires API payments.
+
+### **2. Hosting AI Agents on Render**
+To deploy AI agents externally:
+1. Navigate to **Flowise GitHub Repository** and locate **Self-Hosting Guide**.
+2. Choose a hosting provider (**Render** recommended for ease of use).
+3. Set up a **persistent disk** to retain chatbot sessions.
+4. Deploy via **Docker or Node.js** with a **Starter Plan ($7/month)**.
+5. Connect the hosted service to external applications via **REST API**.
+
+## **Best Practices for AI Deployment**
+- **Use Open-Source Models Locally**: Best for privacy and security.
+- **Use OpenAI for Client Applications**: Provides higher accuracy and reliability.
+- **Optimize Model Selection**: Avoid weak quantized models for complex tasks.
+- **Secure API Keys**: Rotate keys periodically to prevent misuse.
+- **Enable Persistent Storage**: Prevents AI models from losing memory in production.
+
+## **Additional Information**
+
+### **Additional Features and Considerations**
+- **Multi-Agent Coordination**: Enhance workflows by connecting specialized agents.
+- **Hybrid Cloud-Local Deployment**: Balance cost, speed, and privacy by mixing local and API-based models.
+- **Scaling AI Models**: Adjust compute resources based on query demands.
+- **Alternative Hosting Platforms**:
+  - **AWS Lambda**: Serverless AI hosting.
+  - **Hugging Face Spaces**: API-based AI inference.
+  - **Google Cloud Run**: Cost-efficient AI execution.
+  - **Railway.app**: Developer-friendly AI deployment.
+
+### **Alternative AI Agent Frameworks**
+1. **LangFlow** – Drag-and-drop AI workflow designer.
+2. **AutoGen (Microsoft)** – Advanced multi-agent AI automation.
+3. **CrewAI** – Open-source AI orchestration framework.
+4. **Haystack (deepset.ai)** – NLP-driven document processing.
+5. **BotPress** – AI-powered chatbot development.
+
+## **Sources**
+
+1. [Flowise GitHub Repository](https://github.com/FlowiseAI/Flowise)
+2. [Ollama AI Documentation](https://ollama.ai/)
+3. [LangChain AI Framework](https://python.langchain.com/)
+4. [SERP API Documentation](https://serpapi.com/)
+5. [OpenAI API Reference](https://platform.openai.com/docs/)
+6. [Render Hosting Guide](https://render.com/docs)
+
+## **Appendix**
+
+1. **Appendix A: Flowise AI Agent Architecture** – Structuring AI workflows and dependencies.
+2. **Appendix B: Vector Store Optimization** – Comparing FAISS, ChromaDB, and Pinecone.
+3. **Appendix C: Self-Hosting AI Models** – Deploying AI agents on Render and AWS.
+4. **Appendix D: Secure API Key Management** – Best practices for storing and rotating credentials.
+5. **Appendix E: Performance Benchmarking for AI Agents** – Evaluating different LLM quantization levels and processing times.
+
 
 #### [Table of Contents](#0-table-of-contents)
 
 ---
+
 #### [Table of Contents](#0-table-of-contents)
 <a id="100-appendix"></a>
 # Appendix A , B , C , D , E
