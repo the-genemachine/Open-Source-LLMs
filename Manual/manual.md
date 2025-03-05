@@ -70,6 +70,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 3. **[Flowise Interface Overview and Features](#50-flowise-interface)**: Understand the Flowise interface and its core features.
 4. **[Building a Local Retrieval-Augmented Chatbot with Flowise and Llama 3](#51-llama3-chatbot)**: Learn how to build a local RAG chatbot using Flowise and Llama 3.
 5. **[Building Multi-Agent AI Systems with Flowise and Llama 3](#52-multi-agent)**: Explore how to build multi-agent AI systems using Flowise and Llama 3.
+6. **[Building AI Agents with Function Calling in Flowise and Llama 3](#53-function-calling-flowise)**: Learn how to build AI agents with function calling in Flowise and Llama 3.
 
 ---
 
@@ -7443,6 +7444,132 @@ This document outlines the development of a **multi-agent AI system** using **Fl
 3. **Appendix C: Model Performance Comparisons** – Benchmarking different Llama 3 variants.
 4. **Appendix D: Deploying AI Agents in Production** – Guidelines for cloud-based agent deployment.
 5. **Appendix E: Function Calling and API Extensions** – Enhancing AI agents with third-party API access.
+
+#### [Table of Contents](#0-table-of-contents)
+
+---
+
+<a id="53-function-calling-flowise"></a>
+# 6. Building AI Agents with Function Calling in Flowise and Llama 3
+
+## **Introduction**
+
+This document details the process of creating an **AI-driven content automation system** using **Flowise** and a locally hosted **Llama 3 model** with function-calling capabilities. The AI agents will handle:
+- **Web search** for real-time information retrieval.
+- **Blog content generation** based on search results.
+- **Social media content creation**, including tweet generation.
+- (Optional) **YouTube title generation** to expand content distribution.
+
+By structuring multiple agents under a **supervisor model**, this framework automates complex workflows while maintaining flexibility to scale with additional tasks.
+
+## **System Architecture**
+
+### **1. AI Agent Structure**
+- **Supervisor Agent**: Delegates tasks to specialized worker agents.
+- **Worker Agents**:
+  - **Web Researcher**: Uses SERP API to fetch search results.
+  - **Creative Writer**: Generates blog content based on research findings.
+  - **Social Media Strategist**: Converts blog content into social media posts.
+  - *(Optional)* **YouTube Title Generator**: Creates optimized YouTube titles.
+
+### **2. Setting Up Flowise for AI Agents**
+
+#### **Creating the AI Agent Workflow**
+1. Navigate to **Agent Flows** in Flowise.
+2. Click **Add New** to create a custom agent workflow.
+3. Insert a **Supervisor Agent**.
+4. Add at least **three Worker Agents**:
+   - Web Researcher
+   - Creative Writer
+   - Social Media Strategist
+5. Connect the **Supervisor Agent** to each Worker Agent.
+6. Use **Chatbot Llama Function** for function calling capabilities.
+
+#### **Configuring the Supervisor and Workers**
+1. Set the **Supervisor Agent** to dynamically delegate tasks.
+2. Define Worker Agents with specialized prompts:
+   - **Web Researcher**: Uses SERP API for search queries.
+   - **Creative Writer**: Converts retrieved data into blog posts.
+   - **Social Media Strategist**: Generates engaging tweets.
+3. Configure a **temperature setting of 0.9** for creative writing tasks.
+4. Save the workflow as `AI Content Automation Agent`.
+
+## **Enhancing Agent Performance**
+
+### **1. Using Function Calling with Llama 3**
+- **Function calling models** are required for automated tool integration.
+- Assign **Llama 3 Function** as the default model for all agents.
+- Set up different Llama models per agent as needed.
+
+### **2. Web Search Integration**
+1. Add **SERP API Tool** for real-time search.
+2. Connect **Web Researcher** to the SERP API.
+3. Configure **API credentials**:
+   - Obtain API key from **SERP API dashboard**.
+   - Insert the key into **Flowise credentials**.
+
+### **3. Prompt Engineering for Worker Specialization**
+1. Use **Flowise Marketplace** to access **Prompt Engineering Team** template.
+2. Generate structured prompts for Worker Agents.
+3. Assign the following roles:
+   - **Web Researcher Prompt**: Retrieve business news and financial updates.
+   - **Creative Writer Prompt**: Format findings into blog articles.
+   - **Social Media Strategist Prompt**: Summarize articles into tweets.
+
+### **4. Testing the AI Agents**
+
+#### **Workflow Execution**
+1. Run the AI agent in **Flowise Chat**.
+2. Provide an instruction (e.g., "Generate blog content about Tesla stock performance").
+3. **Supervisor Agent** delegates tasks:
+   - **Web Researcher** retrieves stock price and business news.
+   - **Creative Writer** formats findings into an article.
+   - **Social Media Strategist** generates tweets.
+4. *(Optional)* Add **YouTube Title Generator** for additional content expansion.
+
+#### **Validation and Refinement**
+1. Verify web search results for accuracy.
+2. Check generated blog content for readability and coherence.
+3. Review tweet formatting for engagement potential.
+4. *(Optional)* Edit YouTube titles for SEO optimization.
+
+## **Best Practices for AI Content Automation**
+- **Use high-quality Llama models**: Weak models (e.g., Q2) degrade performance.
+- **Experiment with temperature settings**: Adjust values based on creativity needs.
+- **Monitor API usage**: SERP API has rate limits; optimize calls efficiently.
+- **Secure API credentials**: Rotate keys regularly to maintain security.
+- **Refine prompts iteratively**: Test and update prompts to improve agent responses.
+
+## **Additional Information**
+
+### **Additional Features and Considerations**
+- **Multi-Agent Task Orchestration**: Expand workflows with additional task-specific agents.
+- **Tool Integration**: Incorporate additional function-calling tools (e.g., Calculator, Webhooks).
+- **Scalability**: Deploy in a cloud environment for large-scale operations.
+- **Alternative LLM Models**: Optionally integrate **GPT-4** for enhanced language generation.
+
+### **Alternative AI Agent Frameworks**
+1. **LangFlow** – UI-based LangChain automation.
+2. **CrewAI** – Open-source multi-agent coordination.
+3. **AutoGen (Microsoft)** – AI orchestration for complex workflows.
+4. **Haystack (deepset.ai)** – NLP-driven search and document generation.
+5. **BotPress** – Conversational AI and chatbot development.
+
+## **Sources**
+
+1. [Flowise GitHub Repository](https://github.com/FlowiseAI/Flowise)
+2. [Ollama AI Documentation](https://ollama.ai/)
+3. [LangChain AI Agent Framework](https://python.langchain.com/)
+4. [SERP API Documentation](https://serpapi.com/)
+5. [OpenAI API Reference](https://platform.openai.com/docs/)
+
+## **Appendix**
+
+1. **Appendix A: Flowise AI Agent Architecture** – Overview of workflow design.
+2. **Appendix B: Function Calling Use Cases** – Examples of API-based AI interactions.
+3. **Appendix C: SERP API Integration** – Best practices for efficient web search.
+4. **Appendix D: Model Selection Guide** – Comparing Llama quantization levels.
+5. **Appendix E: Scaling AI Workflows** – Strategies for cloud deployment and automation.
 
 
 #### [Table of Contents](#0-table-of-contents)
