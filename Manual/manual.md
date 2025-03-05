@@ -72,6 +72,7 @@ Welcome to this comprehensive course on open-source LLMs. This manual outlines e
 5. **[Building Multi-Agent AI Systems with Flowise and Llama 3](#52-multi-agent)**: Explore how to build multi-agent AI systems using Flowise and Llama 3.
 6. **[Building AI Agents with Function Calling in Flowise and Llama 3](#53-function-calling-flowise)**: Learn how to build AI agents with function calling in Flowise and Llama 3.
 7. **[Building and Hosting AI Agents with Flowise and Open-Source Models](#54-hosting-agents)**: Explore how to build and host AI agents using Flowise and open-source models.
+8. **[Deploying AI Chatbots Using Hugging Face Inference and Flowise](#55-hugging-face-flowise)**: Learn how to deploy AI chatbots using Hugging Face Inference and Flowise.
 
 ---
 
@@ -7687,11 +7688,113 @@ To deploy AI agents externally:
 4. **Appendix D: Secure API Key Management** – Best practices for storing and rotating credentials.
 5. **Appendix E: Performance Benchmarking for AI Agents** – Evaluating different LLM quantization levels and processing times.
 
-
 #### [Table of Contents](#0-table-of-contents)
 
 ---
 
+<a id="55-hugging-face-flowise"></a>
+# 8. Deploying AI Chatbots Using Hugging Face Inference and Flowise
+
+## **Introduction**
+
+This document details the process of building and hosting AI chatbots using **Hugging Face inference models** in **Flowise**. The goal is to demonstrate how open-source models can be used for chatbot deployment without API costs, while also discussing best practices for commercial applications.
+
+## **Using Open-Source AI Models for Inference**
+
+### **1. Understanding Hugging Face Inference**
+- Hugging Face provides cloud-based model inference, eliminating the need for local GPU processing.
+- While **open-source models** are cost-effective, they may not match the performance of **OpenAI API models**.
+- Hugging Face inference can be integrated into **Flowise** to build web-based chatbots.
+
+### **2. Setting Up Flowise for Hugging Face Models**
+1. Navigate to **Chat Flows** in Flowise.
+2. Click **Add New** to create a chatbot workflow.
+3. Add the following components:
+   - **LLM Chain**
+   - **Hugging Face Inference Model**
+   - **Prompt Template**
+4. Connect these components to form a processing pipeline.
+
+### **3. Authenticating Hugging Face API**
+1. Visit [Hugging Face](https://huggingface.co/).
+2. Navigate to **Settings → Access Tokens**.
+3. Generate a new API token (e.g., `Flowise-HF-Test`).
+4. Copy the token and add it to **Flowise Credentials**.
+
+### **4. Selecting and Integrating a Hugging Face Model**
+1. Search for **Mistral 7B Instruct Model** in [Hugging Face Models](https://huggingface.co/models).
+2. Locate the **Inference API** link.
+3. Copy the model identifier (e.g., `mistralai/Mistral-7B-Instruct`).
+4. Paste it into Flowise under **Model Configuration**.
+
+## **Building the Chatbot Logic**
+
+### **1. Configuring the Prompt Template**
+1. Use the standard **Mistral instruction format**:
+   ```
+   <s>[INST] Tell me a joke about {subject} [/INST]
+   ```
+2. Ensure the **prompt template** is correctly formatted.
+3. Save the configuration under a recognizable name (e.g., `JokeBot-HF`).
+
+### **2. Running the Chatbot**
+1. Test the chatbot by entering a subject (e.g., `cats`).
+2. The chatbot should return a structured response.
+3. Adjust prompt structures to refine output quality.
+
+## **Deploying the Chatbot for Public Access**
+
+### **1. Embedding Chatbots into Websites**
+- Flowise allows embedding chatbot UIs via **HTML, JavaScript, and Python**.
+- Generate an **embed code** in Flowise.
+- Insert the code into **WordPress, Replit, or custom HTML pages**.
+
+### **2. Hosting the Chatbot Using Render**
+- **Local models are not accessible remotely**.
+- To host chatbots for **client use**, deploy them on **Render or Hugging Face Spaces**.
+- Use **persistent storage** to retain chatbot sessions.
+
+## **Best Practices for AI Chatbot Development**
+- **Use Hugging Face models for non-commercial applications**.
+- **Prefer OpenAI API models for client-facing projects**.
+- **Optimize prompt engineering** for better chatbot responses.
+- **Secure API tokens** and rotate them periodically.
+- **Host chatbots on scalable cloud platforms** for stability.
+
+## **Additional Information**
+
+### **Additional Features and Considerations**
+- **Hybrid Deployments**: Combine **local AI models** with **cloud-based inference**.
+- **Lead Generation Integration**: Capture user data for business applications.
+- **Custom API Calls**: Expand chatbot functionality with third-party integrations.
+
+### **Alternative AI Chatbot Frameworks**
+1. **LangFlow** – Visual AI workflow automation.
+2. **CrewAI** – Open-source AI agent coordination.
+3. **Haystack (deepset.ai)** – NLP-powered search and retrieval.
+4. **AutoGen (Microsoft)** – Multi-agent AI automation.
+5. **BotPress** – Conversational AI chatbot development.
+
+## **Sources**
+
+1. [Flowise GitHub Repository](https://github.com/FlowiseAI/Flowise)
+2. [Hugging Face Documentation](https://huggingface.co/docs)
+3. [Mistral 7B Instruct Model](https://huggingface.co/mistralai/Mistral-7B-Instruct)
+4. [Render Hosting Guide](https://render.com/docs)
+5. [OpenAI API Reference](https://platform.openai.com/docs/)
+
+## **Appendix**
+
+1. **Appendix A: Flowise Chatbot Architecture** – Overview of chatbot workflows.
+2. **Appendix B: API-Based Model Deployment** – Hosting AI models for public access.
+3. **Appendix C: Optimizing Prompt Engineering** – Techniques for better chatbot responses.
+4. **Appendix D: Secure API Management** – Best practices for handling access tokens.
+5. **Appendix E: Embedding AI Chatbots in Websites** – Implementation using HTML and JavaScript.
+
+
+#### [Table of Contents](#0-table-of-contents)
+
+---
 #### [Table of Contents](#0-table-of-contents)
 <a id="100-appendix"></a>
 # Appendix A , B , C , D , E
